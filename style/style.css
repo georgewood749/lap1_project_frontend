@@ -73,6 +73,10 @@ h1 {
     transform: rotate(150deg)
 }
 
-iframe {
-    border: none;
+#gif1, #gif2, #gif3, #gif4 {
+    width: 20%;
+    height: 20%;
+    justify-content: center;
+    align-items: center;
+    vertical-align:middle
 }
