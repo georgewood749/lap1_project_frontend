@@ -14,22 +14,6 @@ function jsonReader(file, cb) {
     })
 }
 
-// function addPost (file) {
-//     jsonReader(file, (err, post))
-//     if (err) {
-//         console.log(err);
-//     } else {
-//         post.text = "hello"
-//         fs.writeFile('./Customer.json', JSON.stringify(data, null, 4), err => {
-//             if (err) {
-//                 console.log(err);
-//             }
-//         });
-//     }
-// };
-
-// addPost('./newPost')
-
 function addPost(text){
 jsonReader('./data.json', (err, data) => {
     if (err) {
