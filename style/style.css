@@ -72,3 +72,7 @@ h1 {
 .btn:hover::after {
     transform: rotate(150deg)
 }
+
+iframe {
+    border: none;
+}

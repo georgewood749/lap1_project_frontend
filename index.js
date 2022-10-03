@@ -33,7 +33,7 @@ const fetchAsync = async (searchTerm) => {
     const gifData = await rawData.json()
     console.log(gifData);
 
-    const gif1url = gifData.data[0].url
+    const gif1url = gifData.data[0].embed_url
     const gif2url = gifData.data[1].embed_url
     const gif3url = gifData.data[2].embed_url
     const gif4url = gifData.data[3].embed_url
