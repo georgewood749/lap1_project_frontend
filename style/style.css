@@ -1,98 +1,134 @@
 @import url("https://fonts.googleapis.com/css2?family=Sarpanch:wght@800&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap');
-@import url("https://fonts.googleapis.com/css2?family=Mr+Dafoe&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Exo:wght@900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@1,500&display=swap");
 
 body {
-    background-image: url("../assets/bg_image.jpeg");
+  background-image: url("../assets/bg_image.jpeg");
+  font-family: "Chakra Petch", sans-serif;
 }
 
 #title {
-    display: flex;
-    justify-content: center;
-    margin: 8%;
+  display: flex;
+  justify-content: center;
+  margin: 8%;
 }
 
 h1 {
-    font-family: "Exo";
-    font-style: italic;
-    margin: 0;
-    font-size: 8em;
-    letter-spacing: 10px;
-    color: black;
-    text-shadow: 0 0 0.05em #fff, 0 0 0.2em #fe05e1, 0 0 0.3em #fe05e1;
-    transform: skew(-15deg);
+  font-family: "Exo";
+  font-style: italic;
+  margin: 0;
+  font-size: 8em;
+  letter-spacing: 10px;
+  color: black;
+  text-shadow: 0 0 0.05em #fff, 0 0 0.2em #fe05e1, 0 0 0.3em #fe05e1;
+  transform: skew(-15deg);
 }
 
 #postContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 
 textarea {
-    width: 50rem;
-    height: 10rem;
-    border-radius: 20px;
-    padding: 10px 10px 10px 10px;
-    margin-bottom: 5px;
+  width: 50rem;
+  height: 10rem;
+  border-radius: 20px;
+  padding: 10px 10px 10px 10px;
+  margin-bottom: 5px;
+  background-color: aliceblue;
+  box-shadow: 0 0 0.05em #fff, 0 0 0.2em #fe05e1, 0 0 0.3em #fe05e1;
+  transition: transform 300ms ease-in-out;
+  transition: 600ms ease-in-out;
+}
+
+textarea:hover {
+    background: rgb(179, 140, 212);
+    transform: scale(1.1, 1.1);
+    border: 2px rgb(8, 4, 4) solid;
 }
 
 .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #gifSearchTerm {
-    border-radius: 10px;
-    padding: 5px;
+  border-radius: 10px;
+  padding: 5px;
 }
 
 .button {
-    position: relative;
-    overflow: hidden;
-    border-radius: 30px;
-    padding: 20px 50px;
-}
-.btn {
-    text-decoration: none;
-    font-size: 1.25rem;
-    color: white;
-    box-shadow: 0 0 0 0 rbga(143, 64, 248, 0.5), 0 0 0 0 rgba(39, 200, 255, 0.5);
-    transition: 0.5s ease, box-shadow 0.3s ease;
-}
-.btn::after {
-    content: "";
-    width: 400px;
-    height: 400px;
-    position: absolute;
-    top: -50px;
-    left: -100px;
-    background-color: #FF3CAC;
-    background-image: linear-gradient(225deg, #27D86C 0%, #26CAF8 50%, #C625D0 100%);
-    z-index: -1;
-    transition: transform 0.5s ease;
-}
-.btn:hover::after {
-    transform: rotate(150deg)
+  position: relative;
+  overflow: hidden;
+  border-radius: 30px;
+  padding: 5px 20px;
+  transition: transform 150ms ease-in-out;
+  transition: 300ms ease-in-out;
 }
 
-#gif1, #gif2, #gif3, #gif4 {
-    width: 20%;
-    height: 20%;
-    justify-content: center;
-    align-items: center;
-    vertical-align:middle
+.button:hover {
+    background: rgb(179, 140, 212);
+    transform: scale(1.1, 1.1);
+    border: 2px rgb(0, 0, 0) solid;
+    box-shadow: 0 5px 15px rgba(176, 46, 172, 0.86);
+}
+
+.btn {
+  text-decoration: none;
+  font-size: 1.25rem;
+  color: white;
+  box-shadow: 0 0 0 0 rbga(143, 64, 248, 0.5), 0 0 0 0 rgba(39, 200, 255, 0.5);
+  transition: 0.5s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover{
+    color: black;
+}
+
+.btn::after {
+  content: "";
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  top: -50px;
+  left: -100px;
+  background-color: #ff3cac;
+  background-image: linear-gradient(
+    225deg,
+    #27d86c 0%,
+    #26caf8 50%,
+    #c625d0 100%
+  );
+  z-index: -1;
+  transition: transform 0.5s ease;
+}
+.btn:hover::after {
+  transform: rotate(150deg);
+}
+
+#gif1,
+#gif2,
+#gif3,
+#gif4 {
+  width: 20%;
+  height: 20%;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
 }
 iframe {
-    border: none;
+  border: none;
 }
 
 .flex-submit {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  margin-left: auto;
+}
+
+placeholder {
+    color: black;
 }

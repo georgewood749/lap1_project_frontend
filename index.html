@@ -23,38 +23,38 @@
 
     <div id="postContainer">
         <form class="post">
-            <!-- <input class="post-content" type="text" name="text" placeholder="What's on your mind?" /> -->
-            <textarea name="postText" id="postText" rows="5" placeholder="What's on your mind?"></textarea>
+            <div id="textBoxHover">
+            <textarea name="postText" id="postText" rows="5" placeholder="What's on your mind?" style="color: black;"></textarea>
             <br>
-            <input id="gifSearchTerm" type="text" placeholder="Search Giphy">
+        </div>
+
+            <div class="container">
+                <div class="button">
+                    <a href="#" class="btn" id="gifbtn">Add gif</a>
+                </div>
+
+                <div id="gifContainer">
+                    <img id="gif1"></iframe>
+                    <img id="gif2"></iframe>
+                    <img id="gif3"></iframe>
+                    <img id="gif4"></iframe>
+                </div>
             
-            <div id="gifContainer">
-                <img id="gif1"></iframe>
-                <img id="gif2"></iframe>
-                <img id="gif3"></iframe>
-                <img id="gif4"></iframe>
-            </div>
-            <br>
+                <input id="gifSearchTerm" type="text" placeholder="Search Giphy">
 
             <div class="flex-submit">
             <div class="container">
                 <div class="button">
                     <a href="#" class="btn">Submit</a>
-                    
                 </div>
             </div>
-
-            <div class="container">
-                <div class="button">
-                    <button class="btn" id="addGif">Add GIF</button>
-                </div>
             </div>
-           
-
         </form>
+
+       
         <div id="charCount"></div>
     </div>
-</div>
+
 
     <div id="listingContainer">
         <div class="post-box">
