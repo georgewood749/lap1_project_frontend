@@ -45,12 +45,14 @@ textarea {
 }
 
 textarea:hover {
-    background: rgb(179, 140, 212);
-    transform: scale(1.1, 1.1);
-    border: 2px rgb(8, 4, 4) solid;
+  background: rgb(179, 140, 212);
+  transform: scale(1.1, 1.1);
+  border: 2px rgb(8, 4, 4) solid;
+  box-shadow: 0px 5px 10px rgba(176, 46, 172, 0.86);
 }
 
 .container {
+  margin-top: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -71,10 +73,10 @@ textarea:hover {
 }
 
 .button:hover {
-    background: rgb(179, 140, 212);
-    transform: scale(1.1, 1.1);
-    border: 2px rgb(0, 0, 0) solid;
-    box-shadow: 0 5px 15px rgba(176, 46, 172, 0.86);
+  background: rgb(179, 140, 212);
+  transform: scale(1.1, 1.1);
+  border: 2px rgb(0, 0, 0) solid;
+  box-shadow: 0 5px 15px rgba(176, 46, 172, 0.86);
 }
 
 .btn {
@@ -85,8 +87,8 @@ textarea:hover {
   transition: 0.5s ease, box-shadow 0.3s ease;
 }
 
-.btn:hover{
-    color: black;
+.btn:hover {
+  color: black;
 }
 
 .btn::after {
@@ -127,8 +129,4 @@ iframe {
 .flex-submit {
   display: flex;
   margin-left: auto;
-}
-
-placeholder {
-    color: black;
 }
