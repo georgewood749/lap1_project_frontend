@@ -1,42 +1,42 @@
 @import url("https://fonts.googleapis.com/css2?family=Sarpanch:wght@800&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Mr+Dafoe&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Exo:wght@900&display=swap");
 
 body {
     background-image: url("../assets/bg_image.jpeg");
 }
 
+#title {
+    display: flex;
+    justify-content: center;
+    margin: 8%;
+}
+
 h1 {
-    text-align: center;
-    font-family: "Sarpanch", sans-serif;
-    font-size: 8rem;
-    padding: 30px;
-    color: #1D9099;
-    text-shadow: 5px 5px #E79C10, 10px 10px #D53A33;
-    text-decoration: underline dashed;
+    font-family: "Exo";
+    font-style: italic;
+    margin: 0;
+    font-size: 8em;
     letter-spacing: 10px;
-    background-color: #444444;
-    border: 3px solid black;
-}
-
-
-#postText {
-    width: 100%;
-    align-items: center;
-    font-family: 'Press Start 2P';
-}
-
-#addGif, #submit {
-    border-radius: 25%;
-    color: white;
-    background-color: black;
-    font-family: 'Press Start 2P';
-}
-
-#addGif:hover,
-#submit:hover {
     color: black;
-    background-color: white;
-    font-family: 'Press Start 2P';
+    text-shadow: 0 0 0.05em #fff, 0 0 0.2em #fe05e1, 0 0 0.3em #fe05e1;
+    transform: skew(-15deg);
+}
+
+#postContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+textarea {
+    width: 50rem;
+    height: 10rem;
+    border-radius: 20px;
+    padding: 10px 10px 10px 10px;
+    margin-bottom: 5px;
 }
 
 .container {
@@ -44,6 +44,12 @@ h1 {
     align-items: center;
     justify-content: center;
 }
+
+#gifSearchTerm {
+    border-radius: 10px;
+    padding: 5px;
+}
+
 .button {
     position: relative;
     overflow: hidden;
@@ -79,4 +85,14 @@ h1 {
     justify-content: center;
     align-items: center;
     vertical-align:middle
+}
+iframe {
+    border: none;
+}
+
+.flex-submit {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
