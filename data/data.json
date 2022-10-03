@@ -1,0 +1,17 @@
+{
+    "id": 1,
+    "text": "lorem ipsum...",
+    "charCount": 180,
+    "gifURL": "...",
+    "reactions": {
+        "love": 1,
+        "hate": 1,
+        "laugh": 1
+    },
+    "comments": [
+        {
+            "commentID": 1,
+            "commentText": "lorem ipsum..."
+        }
+    ]
+}
