@@ -9,17 +9,41 @@
     <script defer src="./index.js"></script>
     <link rel="stylesheet" href="./style/style.css">
     <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+    <script>function searchGif(searchTerm) {
+            const url = `https://api.giphy.com/v1/gifs/search?api_key=ZVMDnur9ERcRHMb2M5WJbZbiz0CEZTdh&q=${searchTerm}&limit=25&offset=0&rating=g&lang=en`
+            fetch(url).then(resp => resp.json()).then(console.log())
+        }</script>
 </head>
 
 <body>
-    <h1>Maulorum</h1>
+    <div id="title">
+        <h1><span class="auto-type"></span></h1>
+    </div>
 
     <div id="postContainer">
         <form class="post">
             <!-- <input class="post-content" type="text" name="text" placeholder="What's on your mind?" /> -->
-            <textarea name="postText" id="postText" cols="100" rows="5" placeholder="What's on your mind?"></textarea>
-            <input type="submit" />
+            <textarea name="postText" id="postText" rows="4" placeholder="What's on your mind?"></textarea>
+            <br>
+            <input id="gifSearchTerm" type="text" placeholder="Search Giphy">
+            <button onclick="searchGif" id="addGif">Add GIF</button>
+            <div id="gifContainer">
+                <img id="gif1">
+                <img id="gif2">
+                <br>
+                <img id="gif3">
+                <img id="gif4">
+            </div>
+            <br>
+
+            <input type="submit" id="submit" />
         </form>
+        <div id="charCount"></div>
     </div>
 
     <div id="listingContainer">
@@ -28,6 +52,14 @@
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+        let typed = new Typed(".auto-type", {
+            strings: ["Maulorum"],
+            typeSpeed: 150,
+            loop: false
+        })
+    </script>
 </body>
 
 </html>

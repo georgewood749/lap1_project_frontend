@@ -1,3 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Sarpanch:wght@800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap');
+
+body {
+    background-image: url("../assets/bg_image.jpeg");
+}
+
 h1 {
-    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    font-family: "Sarpanch", sans-serif;
+    font-size: 8rem;
+    padding: 30px;
+    color: #1D9099;
+    text-shadow: 5px 5px #E79C10, 10px 10px #D53A33;
+    text-decoration: underline dashed;
+    letter-spacing: 10px;
+    background-color: #444444;
+    border: 3px solid black;
+}
+
+
+#postText {
+    width: 90%;
+    align-items: center;
+    font-family: 'Press Start 2P';
+}
+
+#addGif, #submit {
+    border-radius: 25%;
+    color: white;
+    background-color: black;
+    font-family: 'Press Start 2P';
+}
+
+#addGif:hover,
+#submit:hover {
+    color: black;
+    background-color: white;
+    font-family: 'Press Start 2P';
 }
