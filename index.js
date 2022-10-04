@@ -84,3 +84,4 @@ const fetchPostsAsync = async (id) => {
 }
 
 fetchPostsAsync(0)
+
