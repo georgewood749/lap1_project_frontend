@@ -31,12 +31,11 @@ h1 {
     justify-content: center;
     align-items: center;
     padding: 20px;
-    background-image: linear-gradient(
-        -45deg, 
-        rgba(59,173,227,1) 0%, 
-        rgba(87,111,230,1) 25%, 
-        rgba(152,68,183,1) 51%, 
-        rgba(255,53,127,1) 100%);
+    background-image: linear-gradient(-45deg,
+            rgba(59, 173, 227, 1) 0%,
+            rgba(87, 111, 230, 1) 25%,
+            rgba(152, 68, 183, 1) 51%,
+            rgba(255, 53, 127, 1) 100%);
     flex: 1 1 auto;
     border-radius: 30px;
     padding-top: 30px;
@@ -44,9 +43,9 @@ h1 {
 }
 
 #flexContain {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 textarea {
@@ -138,11 +137,14 @@ textarea:hover {
 }
 
 #gif1, #gif2, #gif3, #gif4 {
-    /* width: 20%; */
-    height: 200px;
+    width: 24%;
     justify-content: center;
     align-items: center;
     vertical-align: middle
+}
+
+#gif1:hover, #gif2:hover, #gif3:hover, #gif4:hover {
+    cursor: pointer;
 }
 
 .flex-submit {
@@ -151,17 +153,18 @@ textarea:hover {
 }
 
 .flex-col {
-  display: flex;
-  flex-direction: column;
-  margin-right: auto;
-  flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    margin-right: auto;
+    flex: 1 1 auto;
 }
 
 .flex-row {
-  display: flex;
-  flex-shrink: 2;
-  flex: 1 1 auto;
+    display: flex;
+    flex-shrink: 2;
+    flex: 1 1 auto;
 }
+
 #charCount {
     text-align: right;
 }
