@@ -51,6 +51,7 @@ textarea:hover {
     box-shadow: 0px 5px 10px rgba(176, 46, 172, 0.86);
 }
 
+
 .container {
     margin-top: 10px;
     display: flex;
@@ -114,6 +115,7 @@ textarea:hover {
 #gifContainer {
     justify-content: space-between;
     align-content: space-between;
+    width: 100%;
 }
 
 #gif1, #gif2, #gif3, #gif4 {
@@ -128,4 +130,13 @@ textarea:hover {
 .flex-submit {
     display: flex;
     margin-left: auto;
+}
+
+#charCount {
+    text-align: right;
+}
+
+#counter {
+    background-color: white;
+    border-radius: 25%;
 }
