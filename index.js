@@ -72,6 +72,7 @@ const fetchPostsAsync = async (id) => {
     const rawData = await fetch(`https://maulers-server.onrender.com/entries/`)
     const postData = await rawData.json()
     console.log(postData[0]);
+    console.log(postData[id].comments[0]);
 
     const authorText = postData[id].author
     postAuthor.textContent = authorText
@@ -80,7 +81,11 @@ const fetchPostsAsync = async (id) => {
     postContent.textContent = postText
 
     const commentlist = document.getElementById('comments')
-    // for (i = 0; )
+    for (i = 0; i < 3; i++) {
+        let li = document.createElement('li');
+        li.textContent = postData[id].comments[i]
+        commentlist.appendChild(li)
+    }
 }
 
-fetchPostsAsync(0)
+fetchPostsAsync(1)

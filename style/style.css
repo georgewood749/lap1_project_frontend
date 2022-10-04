@@ -140,9 +140,6 @@ textarea:hover {
 #gif4 {
 
     width: 24%;
-
-    height: 200px;
-
     justify-content: center;
     align-items: center;
     vertical-align: middle
@@ -264,7 +261,7 @@ textarea:hover {
 
 .commentSection {
     width: 555px;
-    height: 40px;
+    /* height: 40px; */
     background: red;
     margin: auto;
 }
