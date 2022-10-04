@@ -75,7 +75,7 @@ const fetchPostsAsync = async (id) => {
 
     const authorText = postData[id].author
     postAuthor.textContent = authorText
-    postAuthor.style.fontWeight = 'bolder'
+
 
     const postText = postData[id].content
     postContent.textContent = postText
