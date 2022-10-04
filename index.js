@@ -28,7 +28,7 @@
 // })
 // }
 
-const fetchAsync = async (searchTerm) => {
+const fetchGifAsync = async (searchTerm) => {
     const rawData = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=ZVMDnur9ERcRHMb2M5WJbZbiz0CEZTdh&q=${searchTerm}&limit=25&offset=0&rating=g&lang=en`)
     const gifData = await rawData.json()
     console.log(gifData);
@@ -52,7 +52,7 @@ const gifButton = document.getElementById('gifbtn')
 gifButton.addEventListener('click', e => {
     e.preventDefault();
     searchTerm = searchGIF.value
-    fetchAsync(searchTerm)
+    fetchGifAsync(searchTerm)
 
     gifContainer.style.display = "initial";
 })
@@ -67,3 +67,19 @@ function textCounter(postBox, counter, charLimit) {
         charCount.value = charLimit - postBox.value.length;
     }
 }
+
+const fetchPostsAsync = async (id) => {
+    const rawData = await fetch(`https://maulers-server.onrender.com/entries/`)
+    const postData = await rawData.json()
+    console.log(postData[0]);
+
+    const authorText = postData[id].author
+    postAuthor.textContent = authorText
+    postAuthor.style.fontWeight = 'bolder'
+
+    const postText = postData[id].content
+    postContent.textContent = postText
+
+}
+
+fetchPostsAsync(0)
