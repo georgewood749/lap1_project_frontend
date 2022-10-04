@@ -26,12 +26,25 @@ h1 {
 }
 
 #postContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: auto;
+    width: 1000px;
     padding: 20px;
-    background-color: grey;
+    background-image: linear-gradient(
+        -45deg, 
+        rgba(59,173,227,1) 0%, 
+        rgba(87,111,230,1) 25%, 
+        rgba(152,68,183,1) 51%, 
+        rgba(255,53,127,1) 100%);
     flex: 1 1 auto;
+    border-radius: 30px;
+    padding-top: 30px;
+    box-shadow: 0.5rem 0.5rem rgb(0, 0, 0), -0.5rem -0.5rem rgb(0, 0, 0)
+}
+
+#flexContain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 textarea {
@@ -53,7 +66,6 @@ textarea:hover {
     box-shadow: 0px 5px 10px rgba(176, 46, 172, 0.86);
 }
 
-
 .container {
     margin-top: 10px;
     display: flex;
@@ -64,6 +76,7 @@ textarea:hover {
 #gifSearchTerm {
     border-radius: 10px;
     padding: 5px;
+    margin-left: 10px;
 }
 
 .button {
@@ -73,6 +86,7 @@ textarea:hover {
     padding: 5px 20px;
     transition: transform 150ms ease-in-out;
     transition: 300ms ease-in-out;
+    z-index: 1;
 }
 
 .button:hover {
@@ -118,10 +132,10 @@ textarea:hover {
     justify-content: space-between;
     align-content: space-between;
     width: 100%;
+    display: none;
 }
 
 #gif1, #gif2, #gif3, #gif4 {
-    /* width: 20%; */
     height: 200px;
     justify-content: center;
     align-items: center;
@@ -152,4 +166,91 @@ textarea:hover {
 #counter {
     background-color: white;
     border-radius: 25%;
+}
+
+/* Listing of past comments */
+
+#listingContainer {
+  margin: auto;
+  margin-top: 100px;
+  width: 1000px;
+  height: 1500px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-image: linear-gradient(
+      -45deg, 
+      rgba(59,173,227,1) 0%, 
+      rgba(87,111,230,1) 25%, 
+      rgba(152,68,183,1) 51%, 
+      rgba(255,53,127,1) 100%);
+  /* flex: 1 1 auto; */
+  border-radius: 30px;
+  padding-top: 30px;
+  box-shadow: 0.5rem 0.5rem rgb(0, 0, 0), -0.5rem -0.5rem rgb(0, 0, 0);
+}
+
+.threadBox {
+  width: 750px;
+  height: 350px;
+  box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2),
+    inset -5px -5px 15px rgba(255, 255, 255, 0.1),
+    5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.1);
+  background: #232427;
+  margin: auto;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#threadFlexCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.postedPost {
+  width: 600px;
+  height: 150px;
+  background: white;
+  border-radius: 20px;
+  padding: 5px 5px 5px 5px;
+}
+
+.emojiSection {
+  width: 100px;
+  height: 20px;
+  background: green;
+  position: relative;
+  top: -12.5px;
+  left: 20px;
+  border-radius: 20px;
+  padding: 2px 2px 2px 2px;
+}
+
+.commentWrap {
+  margin-bottom: 20px;
+}
+
+#addCommentInput {
+  background: blue;
+  width: 400px;
+  height: 30px;
+  border-radius: 20px;
+}
+
+.addComment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.commentSection {
+  width: 555px;
+  height: 40px;
+  background: red;
+  margin: auto;
 }
