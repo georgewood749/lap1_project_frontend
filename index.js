@@ -51,6 +51,8 @@ gifButton.addEventListener('click', e => {
     e.preventDefault();
     searchTerm = searchGIF.value
     fetchAsync(searchTerm)
+
+    gifContainer.style.display = "initial";
 })
 
 
