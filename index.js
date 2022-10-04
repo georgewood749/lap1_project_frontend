@@ -76,10 +76,11 @@ const fetchPostsAsync = async (id) => {
     const authorText = postData[id].author
     postAuthor.textContent = authorText
 
-
     const postText = postData[id].content
     postContent.textContent = postText
 
+    const commentlist = document.getElementById('comments')
+    // for (i = 0; )
 }
 
 fetchPostsAsync(0)
