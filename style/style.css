@@ -30,6 +30,8 @@ h1 {
     justify-content: center;
     align-items: center;
     padding: 20px;
+    background-color: grey;
+    flex: 1 1 auto;
 }
 
 textarea {
@@ -55,7 +57,7 @@ textarea:hover {
     margin-top: 10px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
 }
 
 #gifSearchTerm {
@@ -124,8 +126,20 @@ textarea:hover {
     vertical-align: middle
 }
 
-
 .flex-submit {
     display: flex;
     margin-left: auto;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  margin-right: auto;
+  flex: 1 1 auto;
+}
+
+.flex-row {
+  display: flex;
+  flex-shrink: 2;
+  flex: 1 1 auto;
 }
