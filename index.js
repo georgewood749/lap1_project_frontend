@@ -33,10 +33,12 @@ const fetchAsync = async (searchTerm) => {
     const gifData = await rawData.json()
     console.log(gifData);
 
+
     const gif1url = gifData.data[0].images.original.url
     const gif2url = gifData.data[1].images.original.url
     const gif3url = gifData.data[2].images.original.url
     const gif4url = gifData.data[3].images.original.url
+
 
     gif1.src = gif1url
     gif2.src = gif2url
