@@ -22,29 +22,47 @@
     </div>
 
     <div id="postContainer">
+        <div id="flexContain">
         <form class="post">
-            <!-- <input class="post-content" type="text" name="text" placeholder="What's on your mind?" /> -->
-            <textarea name="postText" id="postText" rows="5" placeholder="What's on your mind?"></textarea>
-            <br>
-            <input id="gifSearchTerm" type="text" placeholder="Search Giphy">
-            <button id="addGif">Add GIF</button>
-            <div id="gifContainer">
-                <iframe id="gif1">
-                <iframe id="gif2">
-                <br>
-                <iframe id="gif3">
-                <iframe id="gif4">
-            </div>
+            <textarea name="postText" id="postText" rows="5" placeholder="What's on your mind?"
+                style="color: black;" maxlength="180" onkeyup="textCounter(this,'counter',180);"></textarea>
             <br>
 
+            <div id="charCount">
+                <input disabled  maxlength="3" size="3" value="180" id="counter">
+            </div>
+
+            <div class="flex-row">
+            <div class="flex-col">
             <div class="container">
                 <div class="button">
-                    <a href="#" class="btn">Submit</a>
+                    <a href="#" class="btn" id="gifbtn">Add gif</a>
+                </div>
+
+                <input id="gifSearchTerm" type="text" placeholder="Search Giphy">
                 </div>
             </div>
+
+            <div class="flex-submit">
+                <div class="container">
+                    <div class="button">
+                        <a href="#" class="btn">Submit</a>
+                    </div>
+                </div>
+                </div>
+            </div>
+                <div id="gifContainer">
+                    <img id="gif1">
+                    <img id="gif2">
+                    <img id="gif3">
+                    <img id="gif4">
+                </div>
+
         </form>
-        <div id="charCount"></div>
     </div>
+        
+    </div>
+
 
     <div id="listingContainer">
         <div class="post-box">

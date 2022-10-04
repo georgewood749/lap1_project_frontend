@@ -33,10 +33,12 @@ const fetchAsync = async (searchTerm) => {
     const gifData = await rawData.json()
     console.log(gifData);
 
-    const gif1url = gifData.data[0].embed_url
-    const gif2url = gifData.data[1].embed_url
-    const gif3url = gifData.data[2].embed_url
-    const gif4url = gifData.data[3].embed_url
+
+    const gif1url = gifData.data[0].images.original.url
+    const gif2url = gifData.data[1].images.original.url
+    const gif3url = gifData.data[2].images.original.url
+    const gif4url = gifData.data[3].images.original.url
+
 
     gif1.src = gif1url
     gif2.src = gif2url
@@ -46,10 +48,22 @@ const fetchAsync = async (searchTerm) => {
 
 
 const searchGIF = document.getElementById('gifSearchTerm')
-const gifButton = document.getElementById('addGif')
+const gifButton = document.getElementById('gifbtn')
 gifButton.addEventListener('click', e => {
     e.preventDefault();
     searchTerm = searchGIF.value
     fetchAsync(searchTerm)
+
+    gifContainer.style.display = "initial";
 })
 
+
+function textCounter(postBox, counter, charLimit) {
+    var charCount = document.getElementById(counter);
+    if (postBox.value.length > charLimit) {
+        postBox.value = postBox.value.substring(0, charLimit);
+        return false;
+    } else {
+        charCount.value = charLimit - postBox.value.length;
+    }
+}

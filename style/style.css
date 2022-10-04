@@ -1,55 +1,103 @@
 @import url("https://fonts.googleapis.com/css2?family=Sarpanch:wght@800&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Exo:wght@900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@1,500&display=swap");
 
 body {
     background-image: url("../assets/bg_image.jpeg");
+    font-family: "Chakra Petch", sans-serif;
+}
+
+#title {
+    display: flex;
+    justify-content: center;
+    margin: 8%;
 }
 
 h1 {
-    text-align: center;
-    font-family: "Sarpanch", sans-serif;
-    font-size: 8rem;
-    padding: 30px;
-    color: #1D9099;
-    text-shadow: 5px 5px #E79C10, 10px 10px #D53A33;
-    text-decoration: underline dashed;
+    font-family: "Exo";
+    font-style: italic;
+    margin: 0;
+    font-size: 8em;
     letter-spacing: 10px;
-    background-color: #444444;
-    border: 3px solid black;
-}
-
-
-#postText {
-    width: 100%;
-    align-items: center;
-    font-family: 'Press Start 2P';
-}
-
-#addGif, #submit {
-    border-radius: 25%;
-    color: white;
-    background-color: black;
-    font-family: 'Press Start 2P';
-}
-
-#addGif:hover,
-#submit:hover {
     color: black;
-    background-color: white;
-    font-family: 'Press Start 2P';
+    text-shadow: 0 0 0.05em #fff, 0 0 0.2em #fe05e1, 0 0 0.3em #fe05e1;
+    transform: skew(-15deg);
+}
+
+#postContainer {
+    margin: auto;
+    width: 1000px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-image: linear-gradient(
+        -45deg, 
+        rgba(59,173,227,1) 0%, 
+        rgba(87,111,230,1) 25%, 
+        rgba(152,68,183,1) 51%, 
+        rgba(255,53,127,1) 100%);
+    flex: 1 1 auto;
+    border-radius: 30px;
+    padding-top: 30px;
+    box-shadow: 0.5rem 0.5rem rgb(0, 0, 0), -0.5rem -0.5rem rgb(0, 0, 0)
+}
+
+#flexContain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+textarea {
+    width: 50rem;
+    height: 10rem;
+    border-radius: 20px;
+    padding: 10px 10px 10px 10px;
+    margin-bottom: 5px;
+    background-color: aliceblue;
+    box-shadow: 0 0 0.05em #fff, 0 0 0.2em #fe05e1, 0 0 0.3em #fe05e1;
+    transition: transform 300ms ease-in-out;
+    transition: 600ms ease-in-out;
+}
+
+textarea:hover {
+    background: rgb(179, 140, 212);
+    transform: scale(1.1, 1.1);
+    border: 2px rgb(8, 4, 4) solid;
+    box-shadow: 0px 5px 10px rgba(176, 46, 172, 0.86);
 }
 
 .container {
+    margin-top: 10px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
 }
+
+#gifSearchTerm {
+    border-radius: 10px;
+    padding: 5px;
+    margin-left: 10px;
+}
+
 .button {
     position: relative;
     overflow: hidden;
     border-radius: 30px;
-    padding: 20px 50px;
+    padding: 5px 20px;
+    transition: transform 150ms ease-in-out;
+    transition: 300ms ease-in-out;
+    z-index: 1;
 }
+
+.button:hover {
+    background: rgb(179, 140, 212);
+    transform: scale(1.1, 1.1);
+    border: 2px rgb(0, 0, 0) solid;
+    box-shadow: 0 5px 15px rgba(176, 46, 172, 0.86);
+}
+
 .btn {
     text-decoration: none;
     font-size: 1.25rem;
@@ -57,6 +105,11 @@ h1 {
     box-shadow: 0 0 0 0 rbga(143, 64, 248, 0.5), 0 0 0 0 rgba(39, 200, 255, 0.5);
     transition: 0.5s ease, box-shadow 0.3s ease;
 }
+
+.btn:hover {
+    color: black;
+}
+
 .btn::after {
     content: "";
     width: 400px;
@@ -64,11 +117,56 @@ h1 {
     position: absolute;
     top: -50px;
     left: -100px;
-    background-color: #FF3CAC;
-    background-image: linear-gradient(225deg, #27D86C 0%, #26CAF8 50%, #C625D0 100%);
+    background-color: #ff3cac;
+    background-image: linear-gradient(225deg,
+            #27d86c 0%,
+            #26caf8 50%,
+            #c625d0 100%);
     z-index: -1;
     transition: transform 0.5s ease;
 }
+
 .btn:hover::after {
-    transform: rotate(150deg)
+    transform: rotate(150deg);
+}
+
+#gifContainer {
+    justify-content: space-between;
+    align-content: space-between;
+    width: 100%;
+    display: none;
+}
+
+#gif1, #gif2, #gif3, #gif4 {
+    /* width: 20%; */
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle
+}
+
+.flex-submit {
+    display: flex;
+    margin-left: auto;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  margin-right: auto;
+  flex: 1 1 auto;
+}
+
+.flex-row {
+  display: flex;
+  flex-shrink: 2;
+  flex: 1 1 auto;
+}
+#charCount {
+    text-align: right;
+}
+
+#counter {
+    background-color: white;
+    border-radius: 25%;
 }
