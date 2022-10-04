@@ -26,12 +26,21 @@ h1 {
 }
 
 #postContainer {
-    display: flex;
+    margin: auto;
+    width: 1000px;
     justify-content: center;
     align-items: center;
     padding: 20px;
     background-color: grey;
     flex: 1 1 auto;
+    border-radius: 30px;
+    padding-top: 30px;
+}
+
+#flexContain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 textarea {
