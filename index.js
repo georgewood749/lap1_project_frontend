@@ -44,6 +44,20 @@ const fetchGifAsync = async (searchTerm) => {
     gif2.src = gif2url
     gif3.src = gif3url
     gif4.src = gif4url
+
+    const gif1Img = document.getElementById('gif1')
+    const gif2Img = document.getElementById('gif2')
+    const gif3Img = document.getElementById('gif3')
+    document.getElementById('gif4').addEventListener('click', )
+
+    gif1Img.addEventListener('click', e => {
+        // e.preventDefault()
+        if (!gif1Img.style.border) {
+            gif1Img.style.border = "2px solid green"
+        } else {
+            gif1Img.style.border = "none"
+        }
+    })
 }
 
 
@@ -69,7 +83,7 @@ function textCounter(postBox, counter, charLimit) {
 }
 
 const fetchPostsAsync = async (id) => {
-    const rawData = await fetch(`https://maulers-server.onrender.com/entries/`)
+    const rawData = await fetch(`https://maulers-backend.herokuapp.com/entries/`)
     const postData = await rawData.json()
     console.log(postData[0]);
     console.log(postData[id].comments[0]);
@@ -93,7 +107,7 @@ const fetchPostsAsync = async (id) => {
 fetchPostsAsync(1)
 
 const loveReaction = async (id) => {
-    fetch(`https://maulers-server.onrender.com/entries/${id}`, {
+    fetch(`https://maulers-backend.herokuapp.com/entries/${id}`, {
     method: "PATCH",
     headers: {
         "Content-Type": "application/json"
