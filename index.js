@@ -123,13 +123,13 @@ const fetchPostsAsync = async (id) => {
 
     commentlist.innerHTML = ''
 
-    for (i = 0; i < 3; i++) {
+    for (i = 0; i < postData.comments.length; i++) {
         let li = document.createElement('li');
         li.textContent = postData.comments[i]
         commentlist.appendChild(li)
         li.style.listStyle = "none"
     }
-    // console.log(postData[id].e1);
+
 }
 
 fetchPostsAsync(1)
@@ -159,9 +159,17 @@ submitBtn.addEventListener('click', () => {
     postEntry(postText.value, selectedGif.src) // add params to post
 })
 
+const commentText = document.getElementById('addCommentInput')
+
+
 submitComment.addEventListener('click', () => {
-    postComment()
+    console.log(commentText.value);
+    console.log(postId.value);
+    postComment(postId.value, commentText.value)
+    fetchPostsAsync(postId.value)
 })
+
+
 
 const postEntry = async (textInput, gif) => {
     await fetch(`https://maulers-server.onrender.com/entries`, {
@@ -171,12 +179,13 @@ const postEntry = async (textInput, gif) => {
         },
         body: JSON.stringify({
             "content": textInput,
-            "gifUrl": gif
-            // add other fields
+            "gifUrl": gif,
+            "comments": [],
+            "e1": 0,
+            "e2": 0,
+            "e3": 0,  
         })
     })
-
-    // form.reset()
 }
 
 const addReaction = async (id, e1 = '', e2 = '', e3 = '') => {
