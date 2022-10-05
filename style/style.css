@@ -146,6 +146,10 @@ textarea:hover {
     display: none;
 }
 
+#gifContainer input[type='radio'] {
+    display: none;
+}
+
 #gif1,
 #gif2,
 #gif3,
