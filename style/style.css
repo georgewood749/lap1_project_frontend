@@ -11,7 +11,7 @@ body {
 #title {
     display: flex;
     justify-content: center;
-    margin: 8%;
+    /* margin: 8%; */
 }
 
 h1 {
@@ -150,10 +150,6 @@ textarea:hover {
 #gif2,
 #gif3,
 #gif4 {
-    height: 200px;
-    justify-content: center;
-    align-items: center;
-    vertical-align: middle;
     width: 24%;
     justify-content: center;
     align-items: center;
@@ -201,7 +197,7 @@ textarea:hover {
     margin: auto;
     margin-top: 100px;
     width: 1000px;
-    height: 1500px;
+    /* height: 1500px; */
     justify-content: center;
     align-items: center;
     padding: 20px;

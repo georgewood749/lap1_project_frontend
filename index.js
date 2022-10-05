@@ -48,7 +48,8 @@ const fetchGifAsync = async (searchTerm) => {
     const gif1Img = document.getElementById('gif1')
     const gif2Img = document.getElementById('gif2')
     const gif3Img = document.getElementById('gif3')
-    document.getElementById('gif4').addEventListener('click', )
+    const gif4Img = document.getElementById('gif4')
+
 
     gif1Img.addEventListener('click', e => {
         e.preventDefault()
@@ -85,7 +86,7 @@ function textCounter(postBox, counter, charLimit) {
 const fetchPostsAsync = async (id) => {
     const rawData = await fetch(`https://maulers-backend.herokuapp.com/entries/`)
     const postData = await rawData.json()
-    console.log(postData[0]);
+    console.log(postData[1]);
 
     const authorText = postData[id].author
     postAuthor.textContent = authorText
@@ -107,13 +108,13 @@ fetchPostsAsync(1)
 
 const loveReaction = async (id) => {
     fetch(`https://maulers-backend.herokuapp.com/entries/${id}`, {
-    method: "PUT",
+    method: "PATCH",
     headers: {
         "Content-Type": "application/json"
     },
     body: JSON.stringify(
         {
-            "e1": "inc"
+            e1: "inc"
         }
     )
 })
@@ -123,6 +124,7 @@ const loveButton = document.getElementById('love')
 loveButton.addEventListener('click', e => {
     e.preventDefault();
     loveReaction(1)
+    fetchPostsAsync(1)
     // const loveCount = loveButton.getAttribute('data-notification-type')
     // console.log(loveCount);
     // loveButton.setAttribute('data-notification-type', (loveCount + 1))
