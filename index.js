@@ -77,9 +77,8 @@ const fetchPostsAsync = async (id) => {
     const authorText = postData[id].author
     postAuthor.textContent = authorText
 
-
     const postText = postData[id].content
-    postContent.textContent = postText
+    postContent.textContent = postText 
 
     const commentlist = document.getElementById('comments')
     for (i = 0; i < 3; i++) {
