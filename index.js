@@ -28,7 +28,7 @@
 // })
 // }
 
-const fetchAsync = async (searchTerm) => {
+const fetchGifAsync = async (searchTerm) => {
     const rawData = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=ZVMDnur9ERcRHMb2M5WJbZbiz0CEZTdh&q=${searchTerm}&limit=25&offset=0&rating=g&lang=en`)
     const gifData = await rawData.json()
     console.log(gifData);
@@ -52,7 +52,7 @@ const gifButton = document.getElementById('gifbtn')
 gifButton.addEventListener('click', e => {
     e.preventDefault();
     searchTerm = searchGIF.value
-    fetchAsync(searchTerm)
+    fetchGifAsync(searchTerm)
 
     gifContainer.style.display = "initial";
 })
@@ -67,3 +67,51 @@ function textCounter(postBox, counter, charLimit) {
         charCount.value = charLimit - postBox.value.length;
     }
 }
+
+const fetchPostsAsync = async (id) => {
+    const rawData = await fetch(`https://maulers-server.onrender.com/entries/`)
+    const postData = await rawData.json()
+    console.log(postData[0]);
+    console.log(postData[id].comments[0]);
+
+    const authorText = postData[id].author
+    postAuthor.textContent = authorText
+
+
+    const postText = postData[id].content
+    postContent.textContent = postText
+
+    const commentlist = document.getElementById('comments')
+    for (i = 0; i < 3; i++) {
+        let li = document.createElement('li');
+        li.textContent = postData[id].comments[i]
+        commentlist.appendChild(li)
+        li.style.listStyle = "none"
+    }
+}
+
+fetchPostsAsync(1)
+
+const loveReaction = async (id) => {
+    fetch(`https://maulers-server.onrender.com/entries/${id}`, {
+    method: "PATCH",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify(
+        {
+            e1: e1 + 1
+        }
+    )
+})
+}
+
+const loveButton = document.getElementById('love')
+loveButton.addEventListener('click', e => {
+    e.preventDefault();
+
+    loveReaction(1)
+})
+
+
+
