@@ -51,11 +51,11 @@ const fetchGifAsync = async (searchTerm) => {
     document.getElementById('gif4').addEventListener('click', )
 
     gif1Img.addEventListener('click', e => {
-        // e.preventDefault()
-        if (!gif1Img.style.border) {
-            gif1Img.style.border = "2px solid green"
+        e.preventDefault()
+        if (!gif1Img.style["border"]) {
+            gif1Img.style["border"] = "1px solid 'green'"
         } else {
-            gif1Img.style.border = "none"
+            gif1Img.style["border"] = "none"
         }
     })
 }
@@ -86,7 +86,6 @@ const fetchPostsAsync = async (id) => {
     const rawData = await fetch(`https://maulers-backend.herokuapp.com/entries/`)
     const postData = await rawData.json()
     console.log(postData[0]);
-    console.log(postData[id].comments[0]);
 
     const authorText = postData[id].author
     postAuthor.textContent = authorText
@@ -101,19 +100,20 @@ const fetchPostsAsync = async (id) => {
         commentlist.appendChild(li)
         li.style.listStyle = "none"
     }
+    console.log(postData[id].e1);
 }
 
 fetchPostsAsync(1)
 
 const loveReaction = async (id) => {
     fetch(`https://maulers-backend.herokuapp.com/entries/${id}`, {
-    method: "PATCH",
+    method: "PUT",
     headers: {
         "Content-Type": "application/json"
     },
     body: JSON.stringify(
         {
-            e1: e1 + 1
+            "e1": "inc"
         }
     )
 })
@@ -122,8 +122,10 @@ const loveReaction = async (id) => {
 const loveButton = document.getElementById('love')
 loveButton.addEventListener('click', e => {
     e.preventDefault();
-
     loveReaction(1)
+    // const loveCount = loveButton.getAttribute('data-notification-type')
+    // console.log(loveCount);
+    // loveButton.setAttribute('data-notification-type', (loveCount + 1))
 })
 
 

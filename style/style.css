@@ -4,44 +4,40 @@
 @import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@1,500&display=swap");
 
 body {
-  background-image: url("../assets/bg_image.jpeg");
-  font-family: "Chakra Petch", sans-serif;
+    background-image: url("../assets/bg_image.jpeg");
+    font-family: "Chakra Petch", sans-serif;
 }
 
 #title {
-  display: flex;
-  justify-content: center;
-  margin: 8%;
+    display: flex;
+    justify-content: center;
+    margin: 8%;
 }
 
 h1 {
-  font-family: "Exo";
-  font-style: italic;
-  margin: 0;
-  font-size: 8em;
-  letter-spacing: 10px;
-  color: black;
-  text-shadow: 0 0 0.05em #fff, 0 0 0.2em #fe05e1, 0 0 0.3em #fe05e1;
-  transform: skew(-15deg);
+    font-family: "Exo";
+    font-style: italic;
+    margin: 0;
+    font-size: 8em;
+    letter-spacing: 10px;
+    color: black;
+    text-shadow: 0 0 0.05em #fff, 0 0 0.2em #fe05e1, 0 0 0.3em #fe05e1;
+    transform: skew(-15deg);
 }
 
 #postContainer {
-<<<<<<< HEAD
-  margin: auto;
-  width: 1000px;
-  padding: 20px;
-  background-image: linear-gradient(
-    -45deg,
-    rgba(59, 173, 227, 1) 0%,
-    rgba(87, 111, 230, 1) 25%,
-    rgba(152, 68, 183, 1) 51%,
-    rgba(255, 53, 127, 1) 100%
-  );
-  flex: 1 1 auto;
-  border-radius: 30px;
-  padding-top: 30px;
-  box-shadow: 0.5rem 0.5rem rgb(0, 0, 0), -0.5rem -0.5rem rgb(0, 0, 0);
-=======
+margin: auto;
+    width: 1000px;
+    padding: 20px;
+    background-image: linear-gradient(-45deg,
+            rgba(59, 173, 227, 1) 0%,
+            rgba(87, 111, 230, 1) 25%,
+            rgba(152, 68, 183, 1) 51%,
+            rgba(255, 53, 127, 1) 100%);
+    flex: 1 1 auto;
+    border-radius: 30px;
+    padding-top: 30px;
+    box-shadow: 0.5rem 0.5rem rgb(0, 0, 0), -0.5rem -0.5rem rgb(0, 0, 0);
     margin: auto;
     width: 1000px;
     padding: 20px;
@@ -53,8 +49,7 @@ h1 {
     flex: 1 1 auto;
     border-radius: 30px;
     padding-top: 30px;
-    box-shadow: 0.5rem 0.5rem rgb(0, 0, 0), -0.5rem -0.5rem rgb(0, 0, 0)
->>>>>>> 02f5cf1ab63c972f3766d417a94fd0befc8dece3
+    box-shadow: 0.5rem 0.5rem rgb(0, 0, 0), -0.5rem -0.5rem rgb(0, 0, 0) 
 }
 
 #flexContain {
@@ -64,111 +59,105 @@ h1 {
 }
 
 textarea {
-  width: 50rem;
-  height: 10rem;
-  border-radius: 20px;
-  padding: 10px 10px 10px 10px;
-  margin-bottom: 5px;
-  background-color: aliceblue;
-  box-shadow: 0 0 0.05em #fff, 0 0 0.2em #fe05e1, 0 0 0.3em #fe05e1;
-  transition: transform 300ms ease-in-out;
-  transition: 600ms ease-in-out;
+    width: 50rem;
+    height: 10rem;
+    border-radius: 20px;
+    padding: 10px 10px 10px 10px;
+    margin-bottom: 5px;
+    background-color: aliceblue;
+    box-shadow: 0 0 0.05em #fff, 0 0 0.2em #fe05e1, 0 0 0.3em #fe05e1;
+    transition: transform 300ms ease-in-out;
+    transition: 600ms ease-in-out;
 }
 
 textarea:hover {
-  background: rgb(179, 140, 212);
-  transform: scale(1.1, 1.1);
-  border: 2px rgb(8, 4, 4) solid;
-  box-shadow: 0px 5px 10px rgba(176, 46, 172, 0.86);
+    background: rgb(179, 140, 212);
+    transform: scale(1.1, 1.1);
+    border: 2px rgb(8, 4, 4) solid;
+    box-shadow: 0px 5px 10px rgba(176, 46, 172, 0.86);
 }
 
 .container {
-  margin-top: 10px;
-  display: flex;
-  align-items: center;
-  /* justify-content: center; */
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
 }
 
 #gifSearchTerm {
-  border-radius: 10px;
-  padding: 5px;
-  margin-left: 10px;
+    border-radius: 10px;
+    padding: 5px;
+    margin-left: 10px;
 }
 
 .button {
-  position: relative;
-  overflow: hidden;
-  border-radius: 30px;
-  padding: 5px 20px;
-  transition: transform 150ms ease-in-out;
-  transition: 300ms ease-in-out;
-  z-index: 1;
+    position: relative;
+    overflow: hidden;
+    border-radius: 30px;
+    padding: 5px 20px;
+    transition: transform 150ms ease-in-out;
+    transition: 300ms ease-in-out;
+    z-index: 1;
 }
 
 .button:hover {
-  background: rgb(179, 140, 212);
-  transform: scale(1.1, 1.1);
-  border: 2px rgb(0, 0, 0) solid;
-  box-shadow: 0 5px 15px rgba(176, 46, 172, 0.86);
+    background: rgb(179, 140, 212);
+    transform: scale(1.1, 1.1);
+    border: 2px rgb(0, 0, 0) solid;
+    box-shadow: 0 5px 15px rgba(176, 46, 172, 0.86);
 }
 
 .btn {
-  text-decoration: none;
-  font-size: 1.25rem;
-  color: white;
-  box-shadow: 0 0 0 0 rbga(143, 64, 248, 0.5), 0 0 0 0 rgba(39, 200, 255, 0.5);
-  transition: 0.5s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    font-size: 1.25rem;
+    color: white;
+    box-shadow: 0 0 0 0 rbga(143, 64, 248, 0.5), 0 0 0 0 rgba(39, 200, 255, 0.5);
+    transition: 0.5s ease, box-shadow 0.3s ease;
 }
 
 .btn:hover {
-  color: black;
+    color: black;
 }
 
 .btn::after {
-  content: "";
-  width: 400px;
-  height: 400px;
-  position: absolute;
-  top: -50px;
-  left: -100px;
-  background-color: #ff3cac;
-  background-image: linear-gradient(
-    225deg,
-    #27d86c 0%,
-    #26caf8 50%,
-    #c625d0 100%
-  );
-  z-index: -1;
-  transition: transform 0.5s ease;
+    content: "";
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: -50px;
+    left: -100px;
+    background-color: #ff3cac;
+    background-image: linear-gradient(225deg,
+            #27d86c 0%,
+            #26caf8 50%,
+            #c625d0 100%);
+    z-index: -1;
+    transition: transform 0.5s ease;
 }
 
 .btn:hover::after {
-  transform: rotate(150deg);
+    transform: rotate(150deg);
 }
 
 #gifContainer {
-  justify-content: space-between;
-  align-content: space-between;
-  width: 100%;
-  display: none;
+    justify-content: space-between;
+    align-content: space-between;
+    width: 100%;
+    display: none;
 }
 
 #gif1,
 #gif2,
 #gif3,
 #gif4 {
-<<<<<<< HEAD
-  height: 200px;
-  justify-content: center;
-  align-items: center;
-  vertical-align: middle;
-=======
-
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
     width: 24%;
     justify-content: center;
     align-items: center;
-    vertical-align: middle
->>>>>>> 02f5cf1ab63c972f3766d417a94fd0befc8dece3
+    vertical-align: middle 
 }
 
 #gif1:hover,
@@ -179,8 +168,8 @@ textarea:hover {
 }
 
 .flex-submit {
-  display: flex;
-  margin-left: auto;
+    display: flex;
+    margin-left: auto;
 }
 
 .flex-col {
@@ -197,36 +186,34 @@ textarea:hover {
 }
 
 #charCount {
-  text-align: right;
+    text-align: right;
 }
 
 #counter {
-  background-color: white;
-  border-radius: 25%;
+    background-color: white;
+    border-radius: 25%;
 }
 
 
 /* Listing of past comments */
 
 #listingContainer {
-  margin: auto;
-  margin-top: 100px;
-  width: 1000px;
-  height: 1500px;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  background-image: linear-gradient(
-    -45deg,
-    rgba(59, 173, 227, 1) 0%,
-    rgba(87, 111, 230, 1) 25%,
-    rgba(152, 68, 183, 1) 51%,
-    rgba(255, 53, 127, 1) 100%
-  );
-  /* flex: 1 1 auto; */
-  border-radius: 30px;
-  padding-top: 30px;
-  box-shadow: 0.5rem 0.5rem rgb(0, 0, 0), -0.5rem -0.5rem rgb(0, 0, 0);
+    margin: auto;
+    margin-top: 100px;
+    width: 1000px;
+    height: 1500px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-image: linear-gradient(-45deg,
+            rgba(59, 173, 227, 1) 0%,
+            rgba(87, 111, 230, 1) 25%,
+            rgba(152, 68, 183, 1) 51%,
+            rgba(255, 53, 127, 1) 100%);
+    /* flex: 1 1 auto; */
+    border-radius: 30px;
+    padding-top: 30px;
+    box-shadow: 0.5rem 0.5rem rgb(0, 0, 0), -0.5rem -0.5rem rgb(0, 0, 0);
 }
 
 .threadBox {
@@ -277,30 +264,31 @@ textarea:hover {
 }
 
 button {
-  line-height: 1.5em;
-  background-color: transparent;
-  background-repeat: no-repeat;
-  border: none;
-  cursor: pointer;
-  outline: none;
+    line-height: 1.5em;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    outline: none;
 }
 
 [data-notification-count] {
-  position: relative;
+    position: relative;
 }
+
 [data-notification-count]::before {
-  content: attr(data-notification-count);
-  position: absolute;
-  top: -0.75em;
-  right: -0.75em;
-  width: 1.5em;
-  height: 1.30em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  background-color: red;
-  color: white;
+    content: attr(data-notification-count);
+    position: absolute;
+    top: -0.75em;
+    right: -0.75em;
+    width: 1.5em;
+    height: 1.30em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: red;
+    color: white;
 }
 
 .commentWrap {
