@@ -146,9 +146,9 @@ textarea:hover {
     display: none;
 }
 
-#gifContainer input[type='radio'] {
+/* #gifContainer input[type='radio'] {
     display: none;
-}
+} */
 
 #gif1,
 #gif2,
@@ -325,6 +325,16 @@ button {
     padding-left: 7px;
     padding-right: 7px;
     cursor: pointer;
+}
+
+#love:hover,
+#hate:hover,
+#laugh:hover {
+    background: darkgreen;
+}
+
+.selectedEmoji {
+    background: yellow;
 }
 
 img::after {
