@@ -65,16 +65,22 @@
         <div class="threadBox">
             <div id="threadFlexCol">
 
-                <div class="post-box">
-                    <p id="postAuthor"></p>
+                <p id="postAuthor"></p>
+                <div class="postedPost">
                     <p id="postContent"></p>
                 </div>
 
-                <div class="emojiSection">emojis
+                <div class="emojiSection">
                     <div id="reactions">
-                        <img id="love">
-                        <img id="hate">
-                        <img id="laugh">
+                        <!-- <div class="reactContainer"> -->
+                        <button data-notification-count="5" id="love">❤️</button>
+                        <!-- </div> -->
+                        <!-- <div class="reactContainer"> -->
+                        <button data-notification-count="3" id="laugh">😂</button>
+                        <!-- </div> -->
+                        <!-- <div class="reactContainer"> -->
+                        <button data-notification-count="1" id="hate">😡</button>
+                        <!-- </div> -->
                     </div>
                 </div>
 
@@ -82,10 +88,17 @@
                 <div class="commentWrap">
                     <div class="addComment">
                         <input id="addCommentInput" type="text">
+                        <div class="button" id="commentSectionbtn">
+                            <a href="#" class="btn">Submit</a>
+                        </div>
                     </div>
                 </div>
 
-                <div class="commentSection">Comment section</div>
+                <div class="commentSection">
+                    <p>Comments</p>
+                    <ul id="comments">
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
@@ -99,4 +112,5 @@
         });
     </script>
 </body>
+
 </html>

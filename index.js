@@ -44,6 +44,21 @@ const fetchGifAsync = async (searchTerm) => {
     gif2.src = gif2url
     gif3.src = gif3url
     gif4.src = gif4url
+
+    const gif1Img = document.getElementById('gif1')
+    const gif2Img = document.getElementById('gif2')
+    const gif3Img = document.getElementById('gif3')
+    const gif4Img = document.getElementById('gif4')
+
+
+    gif1Img.addEventListener('click', e => {
+        e.preventDefault()
+        if (!gif1Img.style["border"]) {
+            gif1Img.style["border"] = "1px solid 'green'"
+        } else {
+            gif1Img.style["border"] = "none"
+        }
+    })
 }
 
 
@@ -69,18 +84,51 @@ function textCounter(postBox, counter, charLimit) {
 }
 
 const fetchPostsAsync = async (id) => {
-    const rawData = await fetch(`https://maulers-server.onrender.com/entries/`)
+    const rawData = await fetch(`https://maulers-backend.herokuapp.com/entries/`)
     const postData = await rawData.json()
-    console.log(postData[0]);
+    console.log(postData[1]);
 
     const authorText = postData[id].author
     postAuthor.textContent = authorText
 
     const postText = postData[id].content
     postContent.textContent = postText
-
+    
     const commentlist = document.getElementById('comments')
-    // for (i = 0; )
+    for (i = 0; i < 3; i++) {
+        let li = document.createElement('li');
+        li.textContent = postData[id].comments[i]
+        commentlist.appendChild(li)
+        li.style.listStyle = "none"
+    }
+    console.log(postData[id].e1);
 }
 
-fetchPostsAsync(0)
+fetchPostsAsync(1)
+
+const loveReaction = async (id) => {
+    fetch(`https://maulers-backend.herokuapp.com/entries/${id}`, {
+    method: "PUT",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify(
+        {
+            e1: "inc"
+        }
+    )
+})
+}
+
+const loveButton = document.getElementById('love')
+loveButton.addEventListener('click', e => {
+    e.preventDefault();
+    loveReaction(1)
+    fetchPostsAsync(1)
+    // const loveCount = loveButton.getAttribute('data-notification-type')
+    // console.log(loveCount);
+    // loveButton.setAttribute('data-notification-type', (loveCount + 1))
+})
+
+
+

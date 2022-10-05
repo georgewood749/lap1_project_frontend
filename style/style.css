@@ -11,7 +11,7 @@ body {
 #title {
     display: flex;
     justify-content: center;
-    margin: 8%;
+    /* margin: 8%; */
 }
 
 h1 {
@@ -26,6 +26,18 @@ h1 {
 }
 
 #postContainer {
+margin: auto;
+    width: 1000px;
+    padding: 20px;
+    background-image: linear-gradient(-45deg,
+            rgba(59, 173, 227, 1) 0%,
+            rgba(87, 111, 230, 1) 25%,
+            rgba(152, 68, 183, 1) 51%,
+            rgba(255, 53, 127, 1) 100%);
+    flex: 1 1 auto;
+    border-radius: 30px;
+    padding-top: 30px;
+    box-shadow: 0.5rem 0.5rem rgb(0, 0, 0), -0.5rem -0.5rem rgb(0, 0, 0);
     margin: auto;
     width: 1000px;
     padding: 20px;
@@ -37,7 +49,7 @@ h1 {
     flex: 1 1 auto;
     border-radius: 30px;
     padding-top: 30px;
-    box-shadow: 0.5rem 0.5rem rgb(0, 0, 0), -0.5rem -0.5rem rgb(0, 0, 0)
+    box-shadow: 0.5rem 0.5rem rgb(0, 0, 0), -0.5rem -0.5rem rgb(0, 0, 0) 
 }
 
 #flexContain {
@@ -138,14 +150,10 @@ textarea:hover {
 #gif2,
 #gif3,
 #gif4 {
-
     width: 24%;
-
-    height: 200px;
-
     justify-content: center;
     align-items: center;
-    vertical-align: middle
+    vertical-align: middle 
 }
 
 #gif1:hover,
@@ -189,7 +197,7 @@ textarea:hover {
     margin: auto;
     margin-top: 100px;
     width: 1000px;
-    height: 1500px;
+    /* height: 1500px; */
     justify-content: center;
     align-items: center;
     padding: 20px;
@@ -206,7 +214,7 @@ textarea:hover {
 
 .threadBox {
     width: 750px;
-    height: 350px;
+    padding-bottom: 50px;
     box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2),
         inset -5px -5px 15px rgba(255, 255, 255, 0.1),
         5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.1);
@@ -221,6 +229,10 @@ textarea:hover {
 #threadFlexCol {
     display: flex;
     flex-direction: column;
+}
+
+#postAuthor {
+    color: aliceblue;
 }
 
 .postedPost {
@@ -242,8 +254,43 @@ textarea:hover {
     padding: 2px 2px 2px 2px;
 }
 
+#reactions {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+button {
+    line-height: 1.5em;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+[data-notification-count] {
+    position: relative;
+}
+
+[data-notification-count]::before {
+    content: attr(data-notification-count);
+    position: absolute;
+    top: -0.75em;
+    right: -0.75em;
+    width: 1.5em;
+    height: 1.30em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: red;
+    color: white;
+}
+
 .commentWrap {
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: space-evenly;  
+  margin-bottom: 20px;
 }
 
 #addCommentInput {
@@ -264,7 +311,18 @@ textarea:hover {
 
 .commentSection {
     width: 555px;
-    height: 40px;
     background: red;
     margin: auto;
+}
+
+#love,
+#hate,
+#laugh {
+    padding-left: 7px;
+    padding-right: 7px;
+    cursor: pointer;
+}
+
+img::after {
+    border: 2px solid #27d86c;
 }
