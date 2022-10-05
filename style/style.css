@@ -26,7 +26,6 @@ h1 {
 }
 
 #postContainer {
-<<<<<<< HEAD
   margin: auto;
   width: 1000px;
   padding: 20px;
@@ -41,20 +40,6 @@ h1 {
   border-radius: 30px;
   padding-top: 30px;
   box-shadow: 0.5rem 0.5rem rgb(0, 0, 0), -0.5rem -0.5rem rgb(0, 0, 0);
-=======
-    margin: auto;
-    width: 1000px;
-    padding: 20px;
-    background-image: linear-gradient(-45deg,
-            rgba(59, 173, 227, 1) 0%,
-            rgba(87, 111, 230, 1) 25%,
-            rgba(152, 68, 183, 1) 51%,
-            rgba(255, 53, 127, 1) 100%);
-    flex: 1 1 auto;
-    border-radius: 30px;
-    padding-top: 30px;
-    box-shadow: 0.5rem 0.5rem rgb(0, 0, 0), -0.5rem -0.5rem rgb(0, 0, 0)
->>>>>>> 02f5cf1ab63c972f3766d417a94fd0befc8dece3
 }
 
 #flexContain {
@@ -157,18 +142,11 @@ textarea:hover {
 #gif2,
 #gif3,
 #gif4 {
-<<<<<<< HEAD
-  height: 200px;
-  justify-content: center;
-  align-items: center;
-  vertical-align: middle;
-=======
 
     width: 24%;
     justify-content: center;
     align-items: center;
     vertical-align: middle
->>>>>>> 02f5cf1ab63c972f3766d417a94fd0befc8dece3
 }
 
 #gif1:hover,
@@ -304,7 +282,9 @@ button {
 }
 
 .commentWrap {
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: space-evenly;  
+  margin-bottom: 20px;
 }
 
 #addCommentInput {
