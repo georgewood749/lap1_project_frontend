@@ -28,6 +28,10 @@
 // })
 // }
 
+const loveButton = document.getElementById('love')
+const laughButton = document.getElementById('laugh')
+const hateButton = document.getElementById('hate')
+
 let selectedGif = null
 
 function selectGif(gif){
@@ -107,8 +111,23 @@ function textCounter(postBox, counter, charLimit) {
     }
 }
 
-const fetchPostsAsync = async (id) => {
+
+let postId = 1
+
+const getAllPosts = async () => {
     const all = await fetch(`https://maulers-server.onrender.com/entries`)
+    const data = await all.json()
+    console.log(data.length)
+
+    // postId = data.length
+    postId = 3
+    fetchPostsAsync(postId)
+}
+
+getAllPosts()
+// fetchPostsAsync(postId)
+
+const fetchPostsAsync = async (id) => {
     const rawData = await fetch(`https://maulers-server.onrender.com/entries/${id}`)
     const postData = await rawData.json()
     console.log(postData);
@@ -124,15 +143,27 @@ const fetchPostsAsync = async (id) => {
     commentlist.innerHTML = ''
 
     for (i = 0; i < 3; i++) {
-        let li = document.createElement('li');
-        li.textContent = postData.comments[i]
-        commentlist.appendChild(li)
-        li.style.listStyle = "none"
+        if(postData.comments[i]){
+            let li = document.createElement('li');
+            li.textContent = postData.comments[i]
+            commentlist.appendChild(li)
+            li.style.listStyle = "none"
+        }
     }
+
+    loveButton.dataset.notificationCount = postData.e1
+    laughButton.dataset.notificationCount = postData.e2
+    hateButton.dataset.notificationCount = postData.e3
+    
     // console.log(postData[id].e1);
 }
 
-fetchPostsAsync(1)
+
+// const postId = document.getElementById('postId')
+// postId.addEventListener('change', () => {
+//     console.log(postId.value)
+//     fetchPostsAsync(postId.value)
+// })
 
 const loveReaction = async (id) => {
     fetch(`https://maulers-backend.herokuapp.com/entries/${id}`, {
@@ -152,15 +183,21 @@ const form = document.forms[0]
 const submitBtn = document.getElementById('submitBtn')
 const postText = document.getElementById('postText')
 
-const submitComment = document.getElementById('submitComment')
+const commentInputTxt = document.getElementById('addCommentInput')
+const submitCommentBtn = document.getElementById('submitComment')
+const commentsContainer = document.getElementById('comments')
 
 submitBtn.addEventListener('click', () => {
     // console.log(postText.value)
     postEntry(postText.value, selectedGif.src) // add params to post
 })
 
-submitComment.addEventListener('click', () => {
-    postComment()
+submitCommentBtn.addEventListener('click', () => {
+    const li = document.createElement('li')
+    li.textContent = commentInputTxt.value
+    commentsContainer.appendChild(li)
+
+    postComment(postId, commentInputTxt)
 })
 
 const postEntry = async (textInput, gif) => {
@@ -205,21 +242,33 @@ const postComment = async (id, comment) => {
     })
 }
 
-const loveButton = document.getElementById('love')
+let selectedEmoji = null
 
+function selectEmoji(emoji){
+    if(selectedEmoji){
+        selectedEmoji.classList.remove('selectedEmoji')
+        selectedEmoji.dataset.notificationCount = parseInt(selectedEmoji.dataset.notificationCount) - 1
+    }
 
-
-const postId = document.getElementById('postId')
-postId.addEventListener('change', () => {
-    console.log(postId.value)
-    fetchPostsAsync(postId.value)
-})
+    selectedEmoji = emoji
+    selectedEmoji.classList.add('selectedEmoji')
+    selectedEmoji.dataset.notificationCount = parseInt(selectedEmoji.dataset.notificationCount) + 1
+}
 
 loveButton.addEventListener('click', e => {
     e.preventDefault();
-    loveReaction(1)
-    fetchPostsAsync(1)
-    // const loveCount = loveButton.getAttribute('data-notification-type')
-    // console.log(loveCount);
-    // loveButton.setAttribute('data-notification-type', (loveCount + 1))
+    selectEmoji(loveButton)
+    addReaction(postId, 'inc', '', '')
+})
+
+laughButton.addEventListener('click', e => {
+    e.preventDefault();
+    selectEmoji(laughButton)
+    addReaction(postId, '', 'inc', '')
+})
+
+hateButton.addEventListener('click', e => {
+    e.preventDefault();
+    selectEmoji(hateButton)
+    addReaction(postId, '', '', 'inc')
 })
