@@ -202,18 +202,17 @@ textarea:hover {
 }
 
 .threadBox {
-    width: 750px;
-    /* height: 400px; */
-    padding-bottom: 50px;
-    box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2),
-        inset -5px -5px 15px rgba(255, 255, 255, 0.1),
-        5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.1);
-    background: #232427;
-    margin: auto;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 750px;
+  height: 400px;
+  box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2),
+    inset -5px -5px 15px rgba(255, 255, 255, 0.1),
+    5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.1);
+  background: #232427;
+  margin: auto;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #threadFlexCol {
@@ -256,12 +255,13 @@ textarea:hover {
 }
 
 .addComment {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
 }
 
 .commentSection {
