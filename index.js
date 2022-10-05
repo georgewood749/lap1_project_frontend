@@ -208,12 +208,13 @@ const postEntry = async (textInput, gif) => {
         },
         body: JSON.stringify({
             "content": textInput,
-            "gifUrl": gif
-            // add other fields
+            "gifUrl": gif,
+            "comments": [],
+            "e1": 0,
+            "e2": 0,
+            "e3": 0,  
         })
     })
-
-    // form.reset()
 }
 
 const addReaction = async (id, e1 = '', e2 = '', e3 = '') => {
