@@ -4,146 +4,152 @@
 @import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@1,500&display=swap");
 
 body {
-    background-image: url("../assets/bg_image.jpeg");
-    font-family: "Chakra Petch", sans-serif;
+  background-image: url("../assets/bg_image.jpeg");
+  font-family: "Chakra Petch", sans-serif;
 }
 
 #title {
-    display: flex;
-    justify-content: center;
-    /* margin: 8%; */
+  display: flex;
+  justify-content: center;
+  /* margin: 8%; */
 }
 
 h1 {
-    font-family: "Exo";
-    font-style: italic;
-    margin: 0;
-    font-size: 8em;
-    letter-spacing: 10px;
-    color: black;
-    text-shadow: 0 0 0.05em #fff, 0 0 0.2em #fe05e1, 0 0 0.3em #fe05e1;
-    transform: skew(-15deg);
+  font-family: "Exo";
+  font-style: italic;
+  margin: 0;
+  font-size: 8em;
+  letter-spacing: 10px;
+  color: black;
+  text-shadow: 0 0 0.05em #fff, 0 0 0.2em #fe05e1, 0 0 0.3em #fe05e1;
+  transform: skew(-15deg);
 }
 
 #postContainer {
-margin: auto;
-    width: 1000px;
-    padding: 20px;
-    background-image: linear-gradient(-45deg,
-            rgba(59, 173, 227, 1) 0%,
-            rgba(87, 111, 230, 1) 25%,
-            rgba(152, 68, 183, 1) 51%,
-            rgba(255, 53, 127, 1) 100%);
-    flex: 1 1 auto;
-    border-radius: 30px;
-    padding-top: 30px;
-    box-shadow: 0.5rem 0.5rem rgb(0, 0, 0), -0.5rem -0.5rem rgb(0, 0, 0);
-    margin: auto;
-    width: 1000px;
-    padding: 20px;
-    background-image: linear-gradient(-45deg,
-            rgba(59, 173, 227, 1) 0%,
-            rgba(87, 111, 230, 1) 25%,
-            rgba(152, 68, 183, 1) 51%,
-            rgba(255, 53, 127, 1) 100%);
-    flex: 1 1 auto;
-    border-radius: 30px;
-    padding-top: 30px;
-    box-shadow: 0.5rem 0.5rem rgb(0, 0, 0), -0.5rem -0.5rem rgb(0, 0, 0) 
+  margin: auto;
+  width: 1000px;
+  padding: 20px;
+  background-image: linear-gradient(
+    -45deg,
+    rgba(59, 173, 227, 1) 0%,
+    rgba(87, 111, 230, 1) 25%,
+    rgba(152, 68, 183, 1) 51%,
+    rgba(255, 53, 127, 1) 100%
+  );
+  flex: 1 1 auto;
+  border-radius: 30px;
+  padding-top: 30px;
+  box-shadow: 0.5rem 0.5rem rgb(0, 0, 0), -0.5rem -0.5rem rgb(0, 0, 0);
+  margin: auto;
+  width: 1000px;
+  padding: 20px;
+  background-image: linear-gradient(
+    -45deg,
+    rgba(59, 173, 227, 1) 0%,
+    rgba(87, 111, 230, 1) 25%,
+    rgba(152, 68, 183, 1) 51%,
+    rgba(255, 53, 127, 1) 100%
+  );
+  flex: 1 1 auto;
+  border-radius: 30px;
+  padding-top: 30px;
+  box-shadow: 0.5rem 0.5rem rgb(0, 0, 0), -0.5rem -0.5rem rgb(0, 0, 0);
 }
 
 #flexContain {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 textarea {
-    width: 50rem;
-    height: 10rem;
-    border-radius: 20px;
-    padding: 10px 10px 10px 10px;
-    margin-bottom: 5px;
-    background-color: aliceblue;
-    box-shadow: 0 0 0.05em #fff, 0 0 0.2em #fe05e1, 0 0 0.3em #fe05e1;
-    transition: transform 300ms ease-in-out;
-    transition: 600ms ease-in-out;
+  width: 50rem;
+  height: 10rem;
+  border-radius: 20px;
+  padding: 10px 10px 10px 10px;
+  margin-bottom: 5px;
+  background-color: aliceblue;
+  box-shadow: 0 0 0.05em #fff, 0 0 0.2em #fe05e1, 0 0 0.3em #fe05e1;
+  transition: transform 300ms ease-in-out;
+  transition: 600ms ease-in-out;
 }
 
 textarea:hover {
-    background: rgb(179, 140, 212);
-    transform: scale(1.1, 1.1);
-    border: 2px rgb(8, 4, 4) solid;
-    box-shadow: 0px 5px 10px rgba(176, 46, 172, 0.86);
+  background: rgb(179, 140, 212);
+  transform: scale(1.1, 1.1);
+  border: 2px rgb(8, 4, 4) solid;
+  box-shadow: 0px 5px 10px rgba(176, 46, 172, 0.86);
 }
 
 .container {
-    margin-top: 10px;
-    display: flex;
-    align-items: center;
-    /* justify-content: center; */
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
 }
 
 #gifSearchTerm {
-    border-radius: 10px;
-    padding: 5px;
-    margin-left: 10px;
+  border-radius: 10px;
+  padding: 5px;
+  margin-left: 10px;
 }
 
 .button {
-    position: relative;
-    overflow: hidden;
-    border-radius: 30px;
-    padding: 5px 20px;
-    transition: transform 150ms ease-in-out;
-    transition: 300ms ease-in-out;
-    z-index: 1;
+  position: relative;
+  overflow: hidden;
+  border-radius: 30px;
+  padding: 5px 20px;
+  transition: transform 150ms ease-in-out;
+  transition: 300ms ease-in-out;
+  z-index: 1;
 }
 
 .button:hover {
-    background: rgb(179, 140, 212);
-    transform: scale(1.1, 1.1);
-    border: 2px rgb(0, 0, 0) solid;
-    box-shadow: 0 5px 15px rgba(176, 46, 172, 0.86);
+  background: rgb(179, 140, 212);
+  transform: scale(1.1, 1.1);
+  border: 2px rgb(0, 0, 0) solid;
+  box-shadow: 0 5px 15px rgba(176, 46, 172, 0.86);
 }
 
 .btn {
-    text-decoration: none;
-    font-size: 1.25rem;
-    color: white;
-    box-shadow: 0 0 0 0 rbga(143, 64, 248, 0.5), 0 0 0 0 rgba(39, 200, 255, 0.5);
-    transition: 0.5s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  font-size: 1.25rem;
+  color: white;
+  box-shadow: 0 0 0 0 rbga(143, 64, 248, 0.5), 0 0 0 0 rgba(39, 200, 255, 0.5);
+  transition: 0.5s ease, box-shadow 0.3s ease;
 }
 
 .btn:hover {
-    color: black;
+  color: black;
 }
 
 .btn::after {
-    content: "";
-    width: 400px;
-    height: 400px;
-    position: absolute;
-    top: -50px;
-    left: -100px;
-    background-color: #ff3cac;
-    background-image: linear-gradient(225deg,
-            #27d86c 0%,
-            #26caf8 50%,
-            #c625d0 100%);
-    z-index: -1;
-    transition: transform 0.5s ease;
+  content: "";
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  top: -50px;
+  left: -100px;
+  background-color: #ff3cac;
+  background-image: linear-gradient(
+    225deg,
+    #27d86c 0%,
+    #26caf8 50%,
+    #c625d0 100%
+  );
+  z-index: -1;
+  transition: transform 0.5s ease;
 }
 
 .btn:hover::after {
-    transform: rotate(150deg);
+  transform: rotate(150deg);
 }
 
 #gifContainer {
-    justify-content: space-between;
-    align-content: space-between;
-    width: 100%;
-    display: none;
+  justify-content: space-between;
+  align-content: space-between;
+  width: 100%;
+  display: none;
 }
 
 /* #gifContainer input[type='radio'] {
@@ -154,189 +160,195 @@ textarea:hover {
 #gif2,
 #gif3,
 #gif4 {
-    width: 24%;
-    justify-content: center;
-    align-items: center;
-    vertical-align: middle 
+  width: 24%;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
 }
 
 #gif1:hover,
 #gif2:hover,
 #gif3:hover,
 #gif4:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .flex-submit {
-    display: flex;
-    margin-left: auto;
+  display: flex;
+  margin-left: auto;
 }
 
 .flex-col {
-    display: flex;
-    flex-direction: column;
-    margin-right: auto;
-    flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  margin-right: auto;
+  flex: 1 1 auto;
 }
 
 .flex-row {
-    display: flex;
-    flex-shrink: 2;
-    flex: 1 1 auto;
+  display: flex;
+  flex-shrink: 2;
+  flex: 1 1 auto;
 }
 
 #charCount {
-    text-align: right;
+  text-align: right;
 }
 
 #counter {
-    background-color: white;
-    border-radius: 25%;
+  background-color: white;
+  border-radius: 25%;
 }
-
 
 /* Listing of past comments */
 
 #listingContainer {
-    margin: auto;
-    margin-top: 100px;
-    width: 1000px;
-    /* height: 1500px; */
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    background-image: linear-gradient(-45deg,
-            rgba(59, 173, 227, 1) 0%,
-            rgba(87, 111, 230, 1) 25%,
-            rgba(152, 68, 183, 1) 51%,
-            rgba(255, 53, 127, 1) 100%);
-    /* flex: 1 1 auto; */
-    border-radius: 30px;
-    padding-top: 30px;
-    box-shadow: 0.5rem 0.5rem rgb(0, 0, 0), -0.5rem -0.5rem rgb(0, 0, 0);
+  margin: auto;
+  margin-top: 100px;
+  width: 1000px;
+  display: flex;
+  /* height: 1500px; */
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-image: linear-gradient(
+    -45deg,
+    rgba(59, 173, 227, 1) 0%,
+    rgba(87, 111, 230, 1) 25%,
+    rgba(152, 68, 183, 1) 51%,
+    rgba(255, 53, 127, 1) 100%
+  );
+  /* flex: 1 1 auto; */
+  border-radius: 30px;
+  padding-top: 30px;
+  box-shadow: 0.5rem 0.5rem rgb(0, 0, 0), -0.5rem -0.5rem rgb(0, 0, 0);
+}
+
+#previousButton #nextButton {
+    
 }
 
 .threadBox {
-    width: 750px;
-    padding-bottom: 50px;
-    box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2),
-        inset -5px -5px 15px rgba(255, 255, 255, 0.1),
-        5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.1);
-    background: #232427;
-    margin: auto;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 750px;
+  padding-bottom: 50px;
+  box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2),
+    inset -5px -5px 15px rgba(255, 255, 255, 0.1),
+    5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.1);
+  background: #232427;
+  margin: auto;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #threadFlexCol {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 #postAuthor {
-    color: aliceblue;
+  color: aliceblue;
 }
 
 .postedPost {
-    width: 600px;
-    height: 150px;
-    background: white;
-    border-radius: 20px;
-    padding: 5px 5px 5px 5px;
+  width: 600px;
+  height: 150px;
+  background: white;
+  border-radius: 20px;
+  padding: 5px 5px 5px 5px;
 }
 
 .emojiSection {
-    width: 100px;
-    height: 20px;
-    background: green;
-    position: relative;
-    top: -12.5px;
-    left: 20px;
-    border-radius: 20px;
-    padding: 2px 2px 2px 2px;
+  width: 100px;
+  height: 20px;
+  background: green;
+  position: relative;
+  top: -12.5px;
+  left: 20px;
+  border-radius: 20px;
+  padding: 2px 2px 2px 2px;
 }
 
 #reactions {
-    display: flex;
-    justify-content: space-evenly;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 button {
-    line-height: 1.5em;
-    background-color: transparent;
-    background-repeat: no-repeat;
-    border: none;
-    cursor: pointer;
-    outline: none;
+  line-height: 1.5em;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  outline: none;
 }
 
 [data-notification-count] {
-    position: relative;
+  position: relative;
 }
 
 [data-notification-count]::before {
-    content: attr(data-notification-count);
-    position: absolute;
-    top: -0.75em;
-    right: -0.75em;
-    width: 1.5em;
-    height: 1.30em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    background-color: red;
-    color: white;
+  content: attr(data-notification-count);
+  position: absolute;
+  top: -0.75em;
+  right: -0.75em;
+  width: 1.5em;
+  height: 1.3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
 }
 
 .commentWrap {
   display: flex;
-  justify-content: space-evenly;  
+  justify-content: space-evenly;
   margin-bottom: 20px;
 }
 
 #addCommentInput {
-    background: blue;
-    width: 400px;
-    height: 30px;
-    border-radius: 20px;
+  background: blue;
+  width: 400px;
+  height: 30px;
+  border-radius: 20px;
 }
 
 .addComment {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .commentSection {
-    width: 555px;
-    background: red;
-    margin: auto;
+  width: 555px;
+  background: red;
+  margin: auto;
 }
 
 #love,
 #hate,
 #laugh {
-    padding-left: 7px;
-    padding-right: 7px;
-    cursor: pointer;
+  padding-left: 7px;
+  padding-right: 7px;
+  cursor: pointer;
 }
 
 #love:hover,
 #hate:hover,
 #laugh:hover {
-    background: darkgreen;
+  background: darkgreen;
 }
 
 .selectedEmoji {
-    background: yellow;
+  background: yellow;
 }
 
 img::after {
-    border: 2px solid #27d86c;
+  border: 2px solid #27d86c;
 }
