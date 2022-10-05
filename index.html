@@ -46,14 +46,22 @@
                     <div class="flex-submit">
                         <div class="container">
                             <div class="button">
-                                <a href="#" class="btn">Submit</a>
+                                <a href="#" class="btn" id="submitBtn">Submit</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div id="gifContainer">
-                    <img id="gif1" />
-                    <img id="gif2" />
+                    <label>
+                        <input type="radio" name="gifs" id="">
+                        <img id="gif1" />
+                    </label>
+                    <label>
+                        <input type="radio" name="gifs" id="">
+                        <img id="gif2" />
+                    </label>
+                    
+                    
                     <img id="gif3" />
                     <img id="gif4" />
                 </div>
@@ -69,6 +77,9 @@
                 <div class="postedPost">
                     <p id="postContent"></p>
                 </div>
+
+                <!-- Remember to remove this -->
+                <input type="number" id="postId" min="1" max="100">
 
                 <div class="emojiSection">
                     <div id="reactions">
@@ -89,7 +100,7 @@
                     <div class="addComment">
                         <input id="addCommentInput" type="text">
                         <div class="button" id="commentSectionbtn">
-                            <a href="#" class="btn">Submit</a>
+                            <a href="#" class="btn" id="submitComment">Submit</a>
                         </div>
                     </div>
                 </div>
