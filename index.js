@@ -108,7 +108,7 @@ fetchPostsAsync(1)
 
 const loveReaction = async (id) => {
     fetch(`https://maulers-backend.herokuapp.com/entries/${id}`, {
-    method: "PATCH",
+    method: "PUT",
     headers: {
         "Content-Type": "application/json"
     },
