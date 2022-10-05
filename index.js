@@ -127,6 +127,19 @@ const getAllPosts = async () => {
 getAllPosts()
 // fetchPostsAsync(postId)
 
+const prev = document.getElementById('previousButton')
+const next = document.getElementById('nextButton')
+
+prev.addEventListener('click', () => {
+    postId --
+    fetchPostsAsync(postId)
+})
+
+next.addEventListener('click', () => {
+    postId ++
+    fetchPostsAsync(postId)
+})
+
 const fetchPostsAsync = async (id) => {
     const rawData = await fetch(`https://maulers-server.onrender.com/entries/${id}`)
     const postData = await rawData.json()
@@ -137,6 +150,9 @@ const fetchPostsAsync = async (id) => {
 
     const postText = postData.content
     postContent.textContent = postText
+
+    const postGifAPI = postData.gifUrl
+    postGif.src = postGifAPI
     
     const commentlist = document.getElementById('comments')
 
