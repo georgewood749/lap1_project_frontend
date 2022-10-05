@@ -77,6 +77,7 @@ const fetchPostsAsync = async (id) => {
     const authorText = postData[id].author
     postAuthor.textContent = authorText
 
+
     const postText = postData[id].content
     postContent.textContent = postText
 
@@ -85,8 +86,32 @@ const fetchPostsAsync = async (id) => {
         let li = document.createElement('li');
         li.textContent = postData[id].comments[i]
         commentlist.appendChild(li)
+        li.style.listStyle = "none"
     }
 }
 
 fetchPostsAsync(1)
+
+const loveReaction = async (id) => {
+    fetch(`https://maulers-server.onrender.com/entries/${id}`, {
+    method: "PATCH",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify(
+        {
+            e1: e1 + 1
+        }
+    )
+})
+}
+
+const loveButton = document.getElementById('love')
+loveButton.addEventListener('click', e => {
+    e.preventDefault();
+
+    loveReaction(1)
+})
+
+
 
