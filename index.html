@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Maulorum</title>
     <script defer src="./index.js"></script>
-    <link rel="stylesheet" href="./style/style.css">
-    <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./style/style.css" />
+    <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon" />
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
@@ -22,50 +22,94 @@
     </div>
 
     <div id="postContainer">
-        <form class="post">
-            <textarea name="postText" id="postText" rows="5" placeholder="What's on your mind?"
-                style="color: black;" maxlength="180" onkeyup="textCounter(this,'counter',180);"></textarea>
-            <br>
-            <div id="charCount">
-                <input disabled  maxlength="3" size="3" value="180" id="counter">
-            </div>
+        <div id="flexContain">
+            <form class="post">
+                <textarea name="postText" id="postText" rows="5" placeholder="What's on your mind?"
+                    style="color: black;" maxlength="180" onkeyup="textCounter(this,'counter',180);"></textarea>
+                <br>
 
-            <div class="flex-row">
-            <div class="flex-col">
-            <div class="container">
-                <div class="button">
-                    <a href="#" class="btn" id="gifbtn">Add gif</a>
+                <div id="charCount">
+                    <input disabled maxlength="3" size="3" value="180" id="counter">
                 </div>
 
-                <input id="gifSearchTerm" type="text" placeholder="Search Giphy">
-                </div>
-            </div>
+                <div class="flex-row">
+                    <div class="flex-col">
+                        <div class="container">
+                            <div class="button">
+                                <a href="#" class="btn" id="gifbtn">Add gif</a>
+                            </div>
 
-            <div class="flex-submit">
-                <div class="container">
-                    <div class="button">
-                        <a href="#" class="btn">Submit</a>
+                            <input id="gifSearchTerm" type="text" placeholder="Search Giphy" />
+                        </div>
+                    </div>
+
+                    <div class="flex-submit">
+                        <div class="container">
+                            <div class="button">
+                                <a href="#" class="btn" id="submitBtn">Submit</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <div id="gifContainer">
+                    <img id="gif1" />
+                    <img id="gif2" />
+                    <img id="gif3" />
+                    <img id="gif4" />
                 </div>
-            </div>
-
-                            <div id="gifContainer">
-                    <img id="gif1">
-                    <img id="gif2">
-                    <img id="gif3">
-                    <img id="gif4">
-                </div>
-
-        </form>
-
-        
+            </form>
+        </div>
     </div>
 
-
     <div id="listingContainer">
-        <div class="post-box">
-            <p class="post-text"></p>
+        <div class="threadBox">
+            <div id="threadFlexCol">
+
+                <p id="postAuthor"></p>
+                <div class="postedPost">
+                    <p id="postContent"></p>
+                    <img id="postGif" src="">
+                </div>
+
+                <!-- Remember to remove this -->
+                <!-- <input type="number" id="postId" min="1" max="100"> -->
+
+                <div class="emojiSection">
+                    <div id="reactions">
+                        <!-- <div class="reactContainer"> -->
+                        <button data-notification-count="0" id="love">❤️</button>
+                        <!-- </div> -->
+                        <!-- <div class="reactContainer"> -->
+                        <button data-notification-count="0" id="laugh">😂</button>
+                        <!-- </div> -->
+                        <!-- <div class="reactContainer"> -->
+                        <button data-notification-count="0" id="hate">😡</button>
+                        <!-- </div> -->
+                    </div>
+                </div>
+
+
+                <div class="commentWrap">
+                    <div class="addComment">
+                        <input id="addCommentInput" type="text">
+                        <div class="button" id="commentSectionbtn">
+                            <a href="#" class="btn" id="submitComment">Submit</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="commentSection">
+                    <p>Comments</p>
+                    <ul id="comments">
+                    </ul>
+                </div>
+                <div id="previousPost">
+                    <button id="previousButton">Previous</button>
+                </div>
+                <div id="nextPost">
+                    <button id="nextButton">Next</button>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -74,8 +118,8 @@
         let typed = new Typed(".auto-type", {
             strings: ["Maulorum"],
             typeSpeed: 150,
-            loop: false
-        })
+            loop: false,
+        });
     </script>
 </body>
 
