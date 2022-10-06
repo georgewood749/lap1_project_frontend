@@ -285,6 +285,7 @@ button {
 
 [data-notification-count] {
   position: relative;
+  font-size: 13px;
 }
 
 [data-notification-count]::before {
@@ -311,23 +312,28 @@ button {
 .commentWrap {
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
   margin-bottom: 20px;
 }
 
 #addCommentInput {
-  background: blue;
+  background: aliceblue;
   width: 400px;
   height: 30px;
   border-radius: 20px;
+  padding-left: 15px;
 }
 
 .addComment {
   display: flex;
   align-items: center;
-  justify-content: center;
   margin: auto;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+#commentSectionbtn {
+    height: 25px;
 }
 
 .commentSection {
