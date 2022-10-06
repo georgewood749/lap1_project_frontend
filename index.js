@@ -118,7 +118,11 @@ const fetchPostsAsync = async (id) => {
     console.log(postData);
 
     const authorText = postData.author
-    postAuthor.textContent = authorText
+    if (authorText) {
+        postAuthor.textContent = authorText
+    } else {
+        postAuthor.textContent = "anonymous"
+    }
 
     const postText = postData.content
     postContent.textContent = postText
