@@ -225,7 +225,6 @@ textarea:hover {
 }
 
 #previousButton #nextButton {
-    
 }
 
 .threadBox {
@@ -260,14 +259,14 @@ textarea:hover {
 }
 
 .emojiSection {
-  width: 100px;
-  height: 20px;
-  background: green;
+  width: 90px;
+  height: 21px;
+  background: #4c4a4a;
   position: relative;
-  top: -12.5px;
+  top: -10px;
   left: 20px;
   border-radius: 20px;
-  padding: 2px 2px 2px 2px;
+  padding-top: 1px;
 }
 
 #reactions {
@@ -299,8 +298,14 @@ button {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  background-color: red;
-  color: white;
+  background-image: linear-gradient(
+    -45deg,
+    rgba(59, 173, 227, 1) 0%,
+    rgba(87, 111, 230, 1) 25%,
+    rgba(152, 68, 183, 1) 51%,
+    rgba(255, 53, 127, 1) 100%
+  );
+  color: rgb(197, 202, 206);
 }
 
 .commentWrap {
@@ -337,16 +342,20 @@ button {
   padding-left: 7px;
   padding-right: 7px;
   cursor: pointer;
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
 }
 
 #love:hover,
 #hate:hover,
 #laugh:hover {
-  background: darkgreen;
+    opacity: 0.5;
 }
 
 .selectedEmoji {
-  background: yellow;
+  background: #363131;
+  border-radius: 50px;
+  width: 30px;
 }
 
 img::after {
