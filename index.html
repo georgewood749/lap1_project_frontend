@@ -24,8 +24,10 @@
     <div id="postContainer">
         <div id="flexContain">
             <form class="post">
-                <textarea name="postText" id="postText" rows="5" placeholder="What's on your mind?"
+                <textarea required name="postText" id="postText" rows="5" placeholder="What's on your mind?"
                     style="color: black;" maxlength="180" onkeyup="textCounter(this,'counter',180);"></textarea>
+                <br>
+                <input type="text" name="authorText" id="authorText" placeholder="Author"/>
                 <br>
 
                 <div id="charCount">
@@ -63,7 +65,7 @@
 
     <div id="listingContainer">
         <div class="prenextPost">
-            <button id="previousButton"><</button>
+            <button id="previousButton">⇦</button>
         </div>
         <div class="threadBox">
             <div id="threadFlexCol">
@@ -73,9 +75,6 @@
                     <p id="postContent"></p>
                     <img id="postGif" src="">
                 </div>
-
-                <!-- Remember to remove this -->
-                <!-- <input type="number" id="postId" min="1" max="100"> -->
 
                 <div class="emojiSection">
                     <div id="reactions">
@@ -102,14 +101,14 @@
                 </div>
 
                 <div class="commentSection">
-                    <p>Comments</p>
+                    <p id="commentsHeader">Previous Comments</p>
                     <ul id="comments">
                     </ul>
                 </div>
             </div>
         </div>
         <div class="prenextPost">
-            <button id="nextButton">></button>
+            <button id="nextButton">⇨</button>
         </div>
     </div>
 
