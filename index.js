@@ -40,7 +40,7 @@ gif4Img.addEventListener('click', e => {
 const fetchGifAsync = async (searchTerm) => {
     const rawData = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=ZVMDnur9ERcRHMb2M5WJbZbiz0CEZTdh&q=${searchTerm}&limit=25&offset=0&rating=g&lang=en`)
     const gifData = await rawData.json()
-    console.log(gifData);
+    // console.log(gifData);
 
 
     const gif1url = gifData.data[0].images.original.url
@@ -84,7 +84,7 @@ let dataLength
 const getAllPosts = async () => {
     const all = await fetch(`https://maulers-server.onrender.com/entries`)
     const data = await all.json()
-    console.log(data.length)
+    // console.log(data.length)
 
     dataLength = data.length
     postId = dataLength
@@ -118,7 +118,7 @@ next.addEventListener('click', () => {
 const fetchPostsAsync = async (id) => {
     const rawData = await fetch(`https://maulers-server.onrender.com/entries/${id}`)
     const postData = await rawData.json()
-    console.log(postData);
+    // console.log(postData);
 
     const authorText = postData.author
     if (authorText) {
@@ -149,9 +149,9 @@ const fetchPostsAsync = async (id) => {
         }
     }
 
-    loveButton.dataset.notificationCount = postData.e1
-    laughButton.dataset.notificationCount = postData.e2
-    hateButton.dataset.notificationCount = postData.e3
+    loveButton.dataset.notificationCount = postData.e1 || 0
+    laughButton.dataset.notificationCount = postData.e2 || 0
+    hateButton.dataset.notificationCount = postData.e3 || 0
 }
 
 const form = document.forms[0]
@@ -165,8 +165,9 @@ const postAuthorText = document.getElementById('authorText')
 
 
 
-submitBtn.addEventListener('click', () => {
-    // console.log(postText.value)
+submitBtn.addEventListener('click', (e) => {
+    // // console.log(postText.value)
+    e.preventDefault()
     postEntry(postAuthorText.value, postText.value, selectedGif.src) // add params to post
     gif1.src = ""
     gif2.src = ""
@@ -174,7 +175,8 @@ submitBtn.addEventListener('click', () => {
     gif4.src = ""
     postText.value = ""
     selectedGif = null
-    getAllPosts()
+    location.reload()
+    //getAllPosts()
 })
 
 
@@ -186,6 +188,7 @@ submitCommentBtn.addEventListener('click', () => {
     commentsContainer.appendChild(li)
 
     postComment(postId, commentInputTxt.value)
+    commentInputTxt.value = ''
 })
 
 
@@ -243,14 +246,20 @@ const postComment = async (id, comment) => {
 let selectedEmoji = null
 
 function selectEmoji(emoji) {
-    if (selectedEmoji) {
+    let lastSelectedEmoji
+
+    if(selectedEmoji){
         selectedEmoji.classList.remove('selectedEmoji')
         selectedEmoji.dataset.notificationCount = parseInt(selectedEmoji.dataset.notificationCount) - 1
+        lastSelectedEmoji = selectedEmoji
+        selectedEmoji = null
     }
 
-    selectedEmoji = emoji
-    selectedEmoji.classList.add('selectedEmoji')
-    selectedEmoji.dataset.notificationCount = parseInt(selectedEmoji.dataset.notificationCount) + 1
+    if(!lastSelectedEmoji || !lastSelectedEmoji.isSameNode(emoji)){
+        selectedEmoji = emoji
+        selectedEmoji.classList.add('selectedEmoji')
+        selectedEmoji.dataset.notificationCount = parseInt(selectedEmoji.dataset.notificationCount) + 1
+    }
 }
 
 loveButton.addEventListener('click', e => {
