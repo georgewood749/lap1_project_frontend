@@ -205,7 +205,7 @@ submitCommentBtn.addEventListener('click', () => {
     li.textContent = commentInputTxt.value
     commentsContainer.appendChild(li)
 
-    postComment(postId, commentInputTxt)
+    postComment(postId, commentInputTxt.value)
 })
 
 
