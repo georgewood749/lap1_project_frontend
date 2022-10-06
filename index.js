@@ -152,29 +152,6 @@ const fetchPostsAsync = async (id) => {
     loveButton.dataset.notificationCount = postData.e1
     laughButton.dataset.notificationCount = postData.e2
     hateButton.dataset.notificationCount = postData.e3
-
-    // console.log(postData[id].e1);
-}
-
-
-// const postId = document.getElementById('postId')
-// postId.addEventListener('change', () => {
-//     console.log(postId.value)
-//     fetchPostsAsync(postId.value)
-// })
-
-const loveReaction = async (id) => {
-    fetch(`https://maulers-backend.herokuapp.com/entries/${id}`, {
-        method: "PUT",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(
-            {
-                e1: "inc"
-            }
-        )
-    })
 }
 
 const form = document.forms[0]
@@ -185,6 +162,8 @@ const commentInputTxt = document.getElementById('addCommentInput')
 const submitCommentBtn = document.getElementById('submitComment')
 const commentsContainer = document.getElementById('comments')
 const postAuthorText = document.getElementById('authorText')
+
+
 
 submitBtn.addEventListener('click', () => {
     // console.log(postText.value)
@@ -197,6 +176,7 @@ submitBtn.addEventListener('click', () => {
     selectedGif = null
     getAllPosts()
 })
+
 
 
 submitCommentBtn.addEventListener('click', () => {
@@ -228,6 +208,8 @@ const postEntry = async (author, textInput, gif) => {
     })
 }
 
+
+
 const addReaction = async (id, e1 = '', e2 = '', e3 = '') => {
     await fetch(`https://maulers-server.onrender.com/entries/${id}`, {
         method: 'PUT',
@@ -242,6 +224,8 @@ const addReaction = async (id, e1 = '', e2 = '', e3 = '') => {
     })
 }
 
+
+
 const postComment = async (id, comment) => {
     await fetch(`https://maulers-server.onrender.com/entries/${id}`, {
         method: 'PUT',
@@ -253,6 +237,8 @@ const postComment = async (id, comment) => {
         })
     })
 }
+
+
 
 let selectedEmoji = null
 
