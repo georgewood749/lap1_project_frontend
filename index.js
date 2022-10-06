@@ -178,10 +178,11 @@ const postText = document.getElementById('postText')
 const commentInputTxt = document.getElementById('addCommentInput')
 const submitCommentBtn = document.getElementById('submitComment')
 const commentsContainer = document.getElementById('comments')
+const postAuthorText = document.getElementById('authorText')
 
 submitBtn.addEventListener('click', () => {
     // console.log(postText.value)
-    postEntry(postText.value, selectedGif.src) // add params to post
+    postEntry(postAuthorText.value, postText.value, selectedGif.src) // add params to post
     gif1.src = ""
     gif2.src = ""
     gif3.src = ""
@@ -200,13 +201,14 @@ submitCommentBtn.addEventListener('click', () => {
 
 
 
-const postEntry = async (textInput, gif) => {
+const postEntry = async (author, textInput, gif) => {
     await fetch(`https://maulers-server.onrender.com/entries`, {
         method: 'POST',
         headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
+            "author": author,
             "content": textInput,
             "gifUrl": gif,
             "comments": [],
