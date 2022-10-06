@@ -24,7 +24,7 @@
     <div id="postContainer">
         <div id="flexContain">
             <form class="post">
-                <textarea name="postText" id="postText" rows="5" placeholder="What's on your mind?"
+                <textarea required name="postText" id="postText" rows="5" placeholder="What's on your mind?"
                     style="color: black;" maxlength="180" onkeyup="textCounter(this,'counter',180);"></textarea>
                 <br>
 
@@ -70,12 +70,9 @@
 
                 <p id="postAuthor"></p>
                 <div class="postedPost">
-                    <p id="postContent"></p>
-                    <img id="postGif" src="">
+                        <p id="postContent"></p>
+                        <img id="postGif" src="">
                 </div>
-
-                <!-- Remember to remove this -->
-                <!-- <input type="number" id="postId" min="1" max="100"> -->
 
                 <div class="emojiSection">
                     <div id="reactions">

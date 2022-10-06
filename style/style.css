@@ -253,7 +253,7 @@ textarea:hover {
 
 .postedPost {
   width: 600px;
-  height: 150px;
+  /* height: 150px; */
   background: white;
   border-radius: 20px;
   padding: 5px 5px 5px 5px;
@@ -261,7 +261,7 @@ textarea:hover {
 
 .emojiSection {
   width: 100px;
-  height: 20px;
+  /* height: 20px; */
   background: green;
   position: relative;
   top: -12.5px;
@@ -351,4 +351,16 @@ button {
 
 img::after {
   border: 2px solid #27d86c;
+}
+
+.postedPost {
+  display: inline-flex;
+}
+
+#postGif {
+  height: 150px;
+}
+
+li {
+  list-style: none;
 }
