@@ -1,33 +1,3 @@
-// const data = require('./data.json');
-// const fs = require('fs')
-
-
-// function jsonReader(file, cb) {
-//     fs.readFile(file, 'utf-8', (err, fileData) => {
-//         if (err) {
-//             return cb && cb(err)
-//         } try {
-//             const object = JSON.parse(fileData);
-//             return cb && cb(null, object );
-//         } catch (err) {
-//             return cb && cb(err)
-//         }
-//     })
-// }
-
-// function addPost(text){
-// jsonReader('./data.json', (err, data) => {
-//     if (err) {
-//         console.log("Error reading file", err);
-//         return;
-//     }
-//     data.text = text;
-//     fs.writeFile('.data.json', JSON.stringify(data), err => {
-//         if (err) console.log("Error writing file", err);
-//     })
-// })
-// }
-
 const loveButton = document.getElementById('love')
 const laughButton = document.getElementById('laugh')
 const hateButton = document.getElementById('hate')
@@ -152,10 +122,14 @@ const fetchPostsAsync = async (id) => {
     postContent.textContent = postText
 
     const postGifAPI = postData.gifUrl
-    postGif.src = postGifAPI
-    
-    const commentlist = document.getElementById('comments')
 
+    if (postGifAPI){
+        postGif.src = postGifAPI
+    } else {
+        postGif.src = ""
+    }
+
+    const commentlist = document.getElementById('comments')
     commentlist.innerHTML = ''
 
     for (i = 0; i < 3; i++) {
