@@ -225,7 +225,7 @@ textarea:hover {
 }
 
 #previousButton #nextButton {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .threadBox {
@@ -240,6 +240,7 @@ textarea:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  outline: 2px solid rgb(210, 212, 213);
 }
 
 #threadFlexCol {
@@ -257,6 +258,7 @@ textarea:hover {
   background: white;
   border-radius: 20px;
   padding: 5px 5px 5px 5px;
+  outline: 5px solid black;
 }
 
 .emojiSection {
@@ -268,6 +270,7 @@ textarea:hover {
   left: 20px;
   border-radius: 20px;
   padding-top: 1px;
+  outline: 1px solid black;
 }
 
 #reactions {
@@ -323,6 +326,7 @@ button {
   height: 30px;
   border-radius: 20px;
   padding-left: 15px;
+  outline: 1px solid black;
 }
 
 .addComment {
@@ -356,10 +360,6 @@ button {
   color: black;
   text-decoration: underline;
   letter-spacing: 1px;
-}
-
-#comments {
-    list-style-type: none;
 }
 
 #love,
@@ -396,6 +396,17 @@ img::after {
   height: 150px;
 }
 
+#comments {
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+}
+
 li {
-  list-style: none;
+  background-color: white;
+  border-radius: 20px;
+  padding: 5px 5px 5px 5px;
+  width: 500px;
+  margin-bottom: 15px;
+  outline: 2px solid black;
 }

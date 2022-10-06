@@ -191,8 +191,10 @@ submitBtn.addEventListener('click', () => {
     selectedGif = null
 })
 
+
 submitCommentBtn.addEventListener('click', () => {
     const li = document.createElement('li')
+    li.classList.add('addedComments')
     li.textContent = commentInputTxt.value
     commentsContainer.appendChild(li)
 
