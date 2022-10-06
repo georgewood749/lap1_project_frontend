@@ -394,6 +394,8 @@ img::after {
 
 #postGif {
   height: 150px;
+  border: 1px solid white;
+  border-radius: 10%;
 }
 
 #comments {
