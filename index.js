@@ -87,7 +87,7 @@ const getAllPosts = async () => {
     console.log(data.length)
 
     dataLength = data.length
-    postId = 3
+    postId = dataLength
     fetchPostsAsync(postId)
 }
 
@@ -195,6 +195,7 @@ submitBtn.addEventListener('click', () => {
     gif4.src = ""
     postText.value = ""
     selectedGif = null
+    getAllPosts()
 })
 
 
