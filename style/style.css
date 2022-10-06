@@ -11,7 +11,6 @@ body {
 #title {
   display: flex;
   justify-content: center;
-  /* margin: 8%; */
 }
 
 h1 {
@@ -178,10 +177,6 @@ textarea:hover {
   display: none;
 }
 
-/* #gifContainer input[type='radio'] {
-    display: none;
-} */
-
 #gif1,
 #gif2,
 #gif3,
@@ -226,7 +221,6 @@ textarea:hover {
   margin-top: 80px;
   width: 1000px;
   display: flex;
-  /* height: 1500px; */
   justify-content: center;
   align-items: center;
   padding: 20px;
@@ -274,7 +268,6 @@ textarea:hover {
   display: flex;
   justify-content: space-between;
   width: 600px;
-  /* height: 150px; */
   background: white;
   border-radius: 20px;
   padding: 5px 5px 5px 5px;
