@@ -1,41 +1,11 @@
-// const data = require('./data.json');
-// const fs = require('fs')
-
-
-// function jsonReader(file, cb) {
-//     fs.readFile(file, 'utf-8', (err, fileData) => {
-//         if (err) {
-//             return cb && cb(err)
-//         } try {
-//             const object = JSON.parse(fileData);
-//             return cb && cb(null, object );
-//         } catch (err) {
-//             return cb && cb(err)
-//         }
-//     })
-// }
-
-// function addPost(text){
-// jsonReader('./data.json', (err, data) => {
-//     if (err) {
-//         console.log("Error reading file", err);
-//         return;
-//     }
-//     data.text = text;
-//     fs.writeFile('.data.json', JSON.stringify(data), err => {
-//         if (err) console.log("Error writing file", err);
-//     })
-// })
-// }
-
 const loveButton = document.getElementById('love')
 const laughButton = document.getElementById('laugh')
 const hateButton = document.getElementById('hate')
 
 let selectedGif = null
 
-function selectGif(gif){
-    if(selectedGif)
+function selectGif(gif) {
+    if (selectedGif)
         selectedGif.style["border"] = "none"
 
     selectedGif = gif
@@ -66,10 +36,6 @@ gif4Img.addEventListener('click', e => {
     e.preventDefault()
     selectGif(gif4Img)
 })
-
-// if(selectedGif)
-//     selectedGif.style["border"] = "8px solid green"
-// selectedGif.style.border = "8px solid green"
 
 const fetchGifAsync = async (searchTerm) => {
     const rawData = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=ZVMDnur9ERcRHMb2M5WJbZbiz0CEZTdh&q=${searchTerm}&limit=25&offset=0&rating=g&lang=en`)
@@ -113,14 +79,15 @@ function textCounter(postBox, counter, charLimit) {
 
 
 let postId = 1
+let dataLength
 
 const getAllPosts = async () => {
     const all = await fetch(`https://maulers-server.onrender.com/entries`)
     const data = await all.json()
     console.log(data.length)
 
-    // postId = data.length
-    postId = 3
+    dataLength = data.length
+    postId = dataLength
     fetchPostsAsync(postId)
 }
 
@@ -130,13 +97,21 @@ getAllPosts()
 const prev = document.getElementById('previousButton')
 const next = document.getElementById('nextButton')
 
+
+
 prev.addEventListener('click', () => {
-    postId --
+    postId--
+    if (postId < 1){
+        postId = dataLength
+    }
     fetchPostsAsync(postId)
 })
 
 next.addEventListener('click', () => {
-    postId ++
+    postId++
+    if (postId > dataLength) {
+        postId = 1
+    }
     fetchPostsAsync(postId)
 })
 
@@ -146,20 +121,27 @@ const fetchPostsAsync = async (id) => {
     console.log(postData);
 
     const authorText = postData.author
-    postAuthor.textContent = authorText
+    if (authorText) {
+        postAuthor.textContent = authorText
+    } else {
+        postAuthor.textContent = "anonymous"
+    }
 
     const postText = postData.content
     postContent.textContent = postText
 
     const postGifAPI = postData.gifUrl
-    postGif.src = postGifAPI
-    
-    const commentlist = document.getElementById('comments')
+    if (postGifAPI) {
+        postGif.src = postGifAPI
+    } else {
+        postGif.src = ""
+    }
 
+    const commentlist = document.getElementById('comments')
     commentlist.innerHTML = ''
 
     for (i = 0; i < 3; i++) {
-        if(postData.comments[i]){
+        if (postData.comments[i]) {
             let li = document.createElement('li');
             li.textContent = postData.comments[i]
             commentlist.appendChild(li)
@@ -170,29 +152,6 @@ const fetchPostsAsync = async (id) => {
     loveButton.dataset.notificationCount = postData.e1
     laughButton.dataset.notificationCount = postData.e2
     hateButton.dataset.notificationCount = postData.e3
-    
-    // console.log(postData[id].e1);
-}
-
-
-// const postId = document.getElementById('postId')
-// postId.addEventListener('change', () => {
-//     console.log(postId.value)
-//     fetchPostsAsync(postId.value)
-// })
-
-const loveReaction = async (id) => {
-    fetch(`https://maulers-backend.herokuapp.com/entries/${id}`, {
-    method: "PUT",
-    headers: {
-        "Content-Type": "application/json"
-    },
-    body: JSON.stringify(
-        {
-            e1: "inc"
-        }
-    )
-})
 }
 
 const form = document.forms[0]
@@ -202,36 +161,54 @@ const postText = document.getElementById('postText')
 const commentInputTxt = document.getElementById('addCommentInput')
 const submitCommentBtn = document.getElementById('submitComment')
 const commentsContainer = document.getElementById('comments')
+const postAuthorText = document.getElementById('authorText')
+
+
 
 submitBtn.addEventListener('click', () => {
     // console.log(postText.value)
-    postEntry(postText.value, selectedGif.src) // add params to post
+    postEntry(postAuthorText.value, postText.value, selectedGif.src) // add params to post
+    gif1.src = ""
+    gif2.src = ""
+    gif3.src = ""
+    gif4.src = ""
+    postText.value = ""
+    selectedGif = null
+    getAllPosts()
 })
+
+
 
 submitCommentBtn.addEventListener('click', () => {
     const li = document.createElement('li')
+    li.classList.add('addedComments')
     li.textContent = commentInputTxt.value
     commentsContainer.appendChild(li)
 
-    postComment(postId, commentInputTxt)
+    postComment(postId, commentInputTxt.value)
 })
 
-const postEntry = async (textInput, gif) => {
+
+
+const postEntry = async (author, textInput, gif) => {
     await fetch(`https://maulers-server.onrender.com/entries`, {
         method: 'POST',
         headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
+            "author": author,
             "content": textInput,
             "gifUrl": gif,
             "comments": [],
             "e1": 0,
             "e2": 0,
-            "e3": 0,  
+            "e3": 0,
         })
     })
 }
+
+
 
 const addReaction = async (id, e1 = '', e2 = '', e3 = '') => {
     await fetch(`https://maulers-server.onrender.com/entries/${id}`, {
@@ -247,6 +224,8 @@ const addReaction = async (id, e1 = '', e2 = '', e3 = '') => {
     })
 }
 
+
+
 const postComment = async (id, comment) => {
     await fetch(`https://maulers-server.onrender.com/entries/${id}`, {
         method: 'PUT',
@@ -259,10 +238,12 @@ const postComment = async (id, comment) => {
     })
 }
 
+
+
 let selectedEmoji = null
 
-function selectEmoji(emoji){
-    if(selectedEmoji){
+function selectEmoji(emoji) {
+    if (selectedEmoji) {
         selectedEmoji.classList.remove('selectedEmoji')
         selectedEmoji.dataset.notificationCount = parseInt(selectedEmoji.dataset.notificationCount) - 1
     }
