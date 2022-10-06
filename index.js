@@ -4,8 +4,8 @@ const hateButton = document.getElementById('hate')
 
 let selectedGif = null
 
-function selectGif(gif){
-    if(selectedGif)
+function selectGif(gif) {
+    if (selectedGif)
         selectedGif.style["border"] = "none"
 
     selectedGif = gif
@@ -79,13 +79,14 @@ function textCounter(postBox, counter, charLimit) {
 
 
 let postId = 1
+let dataLength
 
 const getAllPosts = async () => {
     const all = await fetch(`https://maulers-server.onrender.com/entries`)
     const data = await all.json()
     console.log(data.length)
 
-    // postId = data.length
+    dataLength = data.length
     postId = 3
     fetchPostsAsync(postId)
 }
@@ -96,19 +97,21 @@ getAllPosts()
 const prev = document.getElementById('previousButton')
 const next = document.getElementById('nextButton')
 
+
+
 prev.addEventListener('click', () => {
-    postId --
-    // if (postId < 1){
-    //     postId = postDataLength.length
-    // }
+    postId--
+    if (postId < 1){
+        postId = dataLength
+    }
     fetchPostsAsync(postId)
 })
 
 next.addEventListener('click', () => {
-    postId ++
-    // if (postId > postDataLength.length) {
-    //     postId = 1
-    // }
+    postId++
+    if (postId > dataLength) {
+        postId = 1
+    }
     fetchPostsAsync(postId)
 })
 
@@ -128,8 +131,7 @@ const fetchPostsAsync = async (id) => {
     postContent.textContent = postText
 
     const postGifAPI = postData.gifUrl
-
-    if (postGifAPI){
+    if (postGifAPI) {
         postGif.src = postGifAPI
     } else {
         postGif.src = ""
@@ -139,7 +141,7 @@ const fetchPostsAsync = async (id) => {
     commentlist.innerHTML = ''
 
     for (i = 0; i < 3; i++) {
-        if(postData.comments[i]){
+        if (postData.comments[i]) {
             let li = document.createElement('li');
             li.textContent = postData.comments[i]
             commentlist.appendChild(li)
@@ -150,7 +152,7 @@ const fetchPostsAsync = async (id) => {
     loveButton.dataset.notificationCount = postData.e1
     laughButton.dataset.notificationCount = postData.e2
     hateButton.dataset.notificationCount = postData.e3
-    
+
     // console.log(postData[id].e1);
 }
 
@@ -163,16 +165,16 @@ const fetchPostsAsync = async (id) => {
 
 const loveReaction = async (id) => {
     fetch(`https://maulers-backend.herokuapp.com/entries/${id}`, {
-    method: "PUT",
-    headers: {
-        "Content-Type": "application/json"
-    },
-    body: JSON.stringify(
-        {
-            e1: "inc"
-        }
-    )
-})
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(
+            {
+                e1: "inc"
+            }
+        )
+    })
 }
 
 const form = document.forms[0]
@@ -220,7 +222,7 @@ const postEntry = async (author, textInput, gif) => {
             "comments": [],
             "e1": 0,
             "e2": 0,
-            "e3": 0,  
+            "e3": 0,
         })
     })
 }
@@ -253,8 +255,8 @@ const postComment = async (id, comment) => {
 
 let selectedEmoji = null
 
-function selectEmoji(emoji){
-    if(selectedEmoji){
+function selectEmoji(emoji) {
+    if (selectedEmoji) {
         selectedEmoji.classList.remove('selectedEmoji')
         selectedEmoji.dataset.notificationCount = parseInt(selectedEmoji.dataset.notificationCount) - 1
     }
