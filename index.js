@@ -216,6 +216,8 @@ submitCommentBtn.addEventListener('click', () => {
     postComment(postId, commentInputTxt)
 })
 
+
+
 const postEntry = async (textInput, gif) => {
     await fetch(`https://maulers-server.onrender.com/entries`, {
         method: 'POST',
