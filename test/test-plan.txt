@@ -1,0 +1,25 @@
+CREATING POSTS
+user can enter text into post box
+
+user cannot exceed character limit
+
+correct character count is displayed in the bottom right of post box
+
+user is able to insert a gif
+
+user can submit post
+
+previous posts are displayed
+
+
+PREVIOUS POSTS
+
+previous posts should be displayed
+
+user should be able to comment on other posts
+
+user is able to see all comments on a post
+
+user is able to react (i.e. reaction count increased when one is clicked)
+
+user is not able to react with the same reaction multiple times (maybe also limit one reaction type per post)? - probably not applicable in the context of this implementation 
