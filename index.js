@@ -37,10 +37,6 @@ gif4Img.addEventListener('click', e => {
     selectGif(gif4Img)
 })
 
-// if(selectedGif)
-//     selectedGif.style["border"] = "8px solid green"
-// selectedGif.style.border = "8px solid green"
-
 const fetchGifAsync = async (searchTerm) => {
     const rawData = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=ZVMDnur9ERcRHMb2M5WJbZbiz0CEZTdh&q=${searchTerm}&limit=25&offset=0&rating=g&lang=en`)
     const gifData = await rawData.json()
@@ -102,11 +98,17 @@ const next = document.getElementById('nextButton')
 
 prev.addEventListener('click', () => {
     postId --
+    // if (postId < 1){
+    //     postId = postDataLength.length
+    // }
     fetchPostsAsync(postId)
 })
 
 next.addEventListener('click', () => {
     postId ++
+    // if (postId > postDataLength.length) {
+    //     postId = 1
+    // }
     fetchPostsAsync(postId)
 })
 
@@ -180,6 +182,12 @@ const commentsContainer = document.getElementById('comments')
 submitBtn.addEventListener('click', () => {
     // console.log(postText.value)
     postEntry(postText.value, selectedGif.src) // add params to post
+    gif1.src = ""
+    gif2.src = ""
+    gif3.src = ""
+    gif4.src = ""
+    postText.value = ""
+    selectedGif = null
 })
 
 submitCommentBtn.addEventListener('click', () => {
