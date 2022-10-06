@@ -289,3 +289,14 @@ hateButton.addEventListener('click', e => {
     selectEmoji(hateButton)
     addReaction(postId, '', '', 'inc')
 })
+
+module.exports = {
+    selectGif,
+    fetchGifAsync,
+    getAllPosts,
+    fetchPostsAsync,
+    postEntry,
+    addReaction,
+    postComment,
+    selectEmoji
+}
