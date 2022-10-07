@@ -3,6 +3,9 @@ const laughButton = document.getElementById('laugh')
 const hateButton = document.getElementById('hate')
 
 let selectedGif = null
+let selectedEmoji = null
+let reactions = ['', '', '']
+
 
 function selectGif(gif) {
     if (selectedGif)
@@ -152,6 +155,10 @@ const fetchPostsAsync = async (id) => {
     loveButton.dataset.notificationCount = postData.e1 || 0
     laughButton.dataset.notificationCount = postData.e2 || 0
     hateButton.dataset.notificationCount = postData.e3 || 0
+
+    if(selectedEmoji)
+        selectedEmoji.classList.remove('selectedEmoji')
+    selectedEmoji = null
 }
 
 const form = document.forms[0]
@@ -242,9 +249,6 @@ const postComment = async (id, comment) => {
 }
 
 
-
-let selectedEmoji = null
-let reactions = ['', '', '']
 
 function selectEmoji(emoji) {
     let lastSelectedEmoji = selectedEmoji
