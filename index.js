@@ -285,7 +285,7 @@ function selectEmoji(emoji) {
 
         selectedEmoji = emoji
     }
-    console.log(reactions)
+    
     addReaction(postId, ...reactions)
 }
 
