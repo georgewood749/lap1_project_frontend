@@ -11,4 +11,14 @@ describe('Testing index.html', () => {
         const title = document.querySelector('title');
         expect(title).toBeTruthy();
     })
+
+    test('it has a posting container', () => {
+        const postingContainer = document.getElementById('postingContainer')
+        expect(postingContainer).toBeTruthy;
+    })
+
+    test('it has a listing container', () => {
+        const listingContainer = document.getElementById('listingContainer')
+        expect(listingContainer).toBeTruthy;
+    })
 })
