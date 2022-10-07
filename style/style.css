@@ -337,6 +337,15 @@ button {
   border-radius: 20px;
   padding-left: 15px;
   outline: 1px solid black;
+  transition: transform 300ms ease-in-out;
+  transition: 600ms ease-in-out;
+}
+
+#addCommentInput:hover {
+  background: rgb(179, 140, 212);
+  transform: scale(1.1, 1.1);
+  border: 2px rgb(8, 4, 4) solid;
+  box-shadow: 0px 5px 10px rgba(176, 46, 172, 0.86);
 }
 
 .addComment {
