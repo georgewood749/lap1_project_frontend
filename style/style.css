@@ -95,10 +95,10 @@ textarea:hover {
 }
 
 #authorText:hover {
-    background: rgb(179, 140, 212);
-    transform: scale(1.1, 1.1);
-    border: 2px rgb(8, 4, 4) solid;
-    box-shadow: 0px 5px 10px rgba(176, 46, 172, 0.86);
+  background: rgb(179, 140, 212);
+  transform: scale(1.1, 1.1);
+  border: 2px rgb(8, 4, 4) solid;
+  box-shadow: 0px 5px 10px rgba(176, 46, 172, 0.86);
 }
 
 #counter {
@@ -117,10 +117,10 @@ textarea:hover {
 }
 
 #gifSearchTerm:hover {
-    background: rgb(179, 140, 212);
-    transform: scale(1.1, 1.1);
-    border: 2px rgb(8, 4, 4) solid;
-    box-shadow: 0px 5px 10px rgba(176, 46, 172, 0.86);
+  background: rgb(179, 140, 212);
+  transform: scale(1.1, 1.1);
+  border: 2px rgb(8, 4, 4) solid;
+  box-shadow: 0px 5px 10px rgba(176, 46, 172, 0.86);
 }
 
 .button {
@@ -355,7 +355,7 @@ button {
 }
 
 #commentSectionbtn {
-  height: 25px;
+  height: fit-content;
 }
 
 .commentSection {
@@ -370,6 +370,7 @@ button {
   );
   margin: auto;
   padding: 5px 5px 5px 5px;
+  outline: 5px solid black;
 }
 
 #commentsHeader {
@@ -434,3 +435,66 @@ li {
   margin-bottom: 15px;
   outline: 2px solid black;
 }
+
+@media only screen and (max-width: 1050px) {
+
+  body {
+    font-size: 13px;
+  }
+
+  h1 {
+    font-size: 7em;
+    letter-spacing: 5px;
+  }
+
+  .btn {
+    text-decoration: none;
+    font-size: 1rem;
+  }
+
+  #postContainer {
+    width: 600px;
+  }
+
+  .post {
+    width: 550px;
+  }
+
+  textarea {
+    width: 32.75rem;
+  }
+
+  #postOverlap {
+    width: 32rem;
+  }
+
+  .flex-row {
+    width: 520px;
+  }
+
+  #listingContainer {
+    width: 650px;
+  }
+
+  .threadBox {
+    width: 550px;
+  }
+
+  #threadFlexCol {
+    width: 450px;
+  }
+  
+  .postedPost {
+    width: 440px;
+  }
+
+  #addCommentInput {
+    width: 300px;
+  }
+
+  li {
+    width: 350px;
+  }
+
+}
+
