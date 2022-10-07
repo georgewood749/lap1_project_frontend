@@ -1,7 +1,7 @@
 # Maulorum - Lap 1 blog project
 
 ## Project Description
-- The task for this project was to create a small journaling website that allows the user to post journal entries that are then passed to a server.
+- The aim was to create a small journaling website allowing users to post journal entries that are then passed to a server.
 
 - Users can create a post including text (limited to 180 characters in our case) and a gif (fetched from giphy using their search API) under a pseudonym of their choice.
 
