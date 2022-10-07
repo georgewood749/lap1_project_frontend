@@ -174,13 +174,6 @@ textarea:hover {
   transform: rotate(150deg);
 }
 
-#gifContainer {
-  justify-content: space-between;
-  align-content: space-between;
-  width: 100%;
-  display: none;
-}
-
 #gif1,
 #gif2,
 #gif3,
@@ -508,6 +501,4 @@ li {
   #previousButton, #nextButton{
     font-size: 2rem;
    }
-
 }
-
