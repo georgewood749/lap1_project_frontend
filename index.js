@@ -187,7 +187,6 @@ submitBtn.addEventListener('click', (e) => {
 })
 
 
-
 submitCommentBtn.addEventListener('click', () => {
     const li = document.createElement('li')
     li.classList.add('addedComments')
@@ -318,3 +317,6 @@ module.exports = {
     postComment,
     selectEmoji
 }
+let submitButtonLoaded = false;
+let formID = 'postForm';
+let timeToWait = 500;

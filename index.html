@@ -19,7 +19,7 @@
 
     <div id="postContainer">
         <div id="flexContain">
-            <form class="post">
+            <form class="post" id="postForm">
                 <textarea required name="postText" id="postText" rows="5" placeholder="What's on your mind?"
                     style="color: black;" maxlength="180" onkeyup="textCounter(this,'counter',180);"></textarea>
                 <br>
@@ -46,7 +46,7 @@
                     <div class="flex-submit">
                         <div class="container">
                             <div class="button">
-                                <a class="btn" id="submitBtn">Submit</a>
+                                <a href="#" class="btn" id="submitBtn" onClick="window.location.reload(true)">Submit</a>
                             </div>
                         </div>
                     </div>
