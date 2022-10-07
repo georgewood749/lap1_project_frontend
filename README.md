@@ -1,11 +1,7 @@
 # Maulorum - Blog Project
 
 ## Project Description
-- The aim was to create a small journaling website allowing users to post journal entries that are then passed to a server.
-
-- Users can create a post including text (limited to 180 characters in our case) and a gif (fetched from giphy using their search API) under a pseudonym of their choice.
-
-- Previous posts are displayed and can be scrolled through using the arrows. Users can react with emojis as well as comment on the posts creating a thread.
+This project is a small journaling website allowing users to create posts that are then displayed as a thread.
 
 ## Installation and Usage
 ### Installation
@@ -13,13 +9,16 @@
 - Backend hosted on Render: https://maulers-server.onrender.com/
 
 ### Usage
-When on the website, you will automatically be shown the most recent post in the bottom box, and will be able to make a post within the top box on the page.
+- Users can use the top box to create a post including text (limited to 180 characters) and a gif (fetched from giphy), under a pseudonym of their choice (author).
+- To add a gif
+  1. Type for desired gif in search bar
+  2. Click "Add Gif" button
+  3. Select your desired one
+- Click submit when your post is ready
 
-Simply type in your post, up to a character limit of 180 characters (count is dynamically displayed). You can also optionally enter your name, and choose a gif from the Giphy library. Enter your search term and click "Add gif", 4 gifs will then be displayed to choose from. Select the gif you want to use by clicking on it (a green box will signal that you have selected a gif).
-
-Once you have entered the desired post, press submit and the data will be posted to the backend of our site.
-
-You'll be able to look through previously posted entries, and react to them from a choice of three reactions (you can only react once per post). You will alos be able to view previous comments and leave a comment of your own.
+- Previous posts are displayed in the bottom box and can be scrolled through using the arrows. 
+- Users can react with emojis as well as comment on the posts.
+- Available buttons must be used to add and submit (enter key has been disabled)
 
 ## Technologies
 #### HTML/CSS
