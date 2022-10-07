@@ -436,6 +436,15 @@ li {
   outline: 2px solid black;
 }
 
+#previousButton, #nextButton{
+ font-size: 5rem;
+ transition: 0.5s ease, box-shadow 0.3s ease;
+}
+
+#previousButton:hover, #nextButton:hover {
+  color: white;
+}
+
 @media only screen and (max-width: 1050px) {
 
   body {
@@ -495,6 +504,10 @@ li {
   li {
     width: 350px;
   }
+
+  #previousButton, #nextButton{
+    font-size: 2rem;
+   }
 
 }
 
