@@ -1,24 +1,16 @@
 # Maulorum - Lap 1 blog project
 
 ## Project Description
-The task for this project was to create a small journaling website that allows the user to post journal entries that are then passed to a server.
+- The task for this project was to create a small journaling website that allows the user to post journal entries that are then passed to a server.
 
-The post that a user can create should allow them to include text (limited to 180 characters in our case), a gif (fetched from giphy using their search API), and we chose to allow the author of th post to optionally include their name with the post.
+- Users can create a post including text (limited to 180 characters in our case) and a gif (fetched from giphy using their search API) under a pseudonym of their choice.
 
-Users are allowed to view past posts, and they can scroll through previous posts using a left and right button.
-
-When users are viewing past entries, they are able to see the full text of the post, the author name (if applicable), the gif (if applicable), any comments that have been made on this entry, and the count of each reaction type. 
-
-Users can also leave their own comments on past posts, which are posted to the server for the next user to be able to view.
-
+- Previous posts are displayed and can be scrolled through using the arrows. Users can react with emojis as well as comment on the posts creating a thread.
 
 ## Installation and Usage
 ### Installation
-Both the frontend and backend of this site have been hosted online. The frontend has been hosted using Netlify, and the backend on Render.
-
-To access the website, simply head to https://maulorum.netlify.app/#.
-
-To access the backend of the website to browse the data, head to https://maulers-server.onrender.com/.
+- Frontend hosted on Netlify: https://maulorum.netlify.app/#
+- Backend hosted on Render: https://maulers-server.onrender.com/
 
 ### Usage
 When on the website, you will automatically be shown the most recent post in the bottom box, and will be able to make a post within the top box on the page.
