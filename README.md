@@ -27,7 +27,6 @@ This project is a small journaling website allowing users to create posts that a
 
 ## Process
 
-## Licence
 
 ## Screenshots
 
