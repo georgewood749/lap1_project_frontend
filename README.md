@@ -13,7 +13,7 @@ This project is a small journaling website allowing users to create posts that a
 - To add a gif
   1. Type for desired gif in search bar
   2. Click "Add Gif" button
-  3. Select your desired one
+  3. Select desired one
 - Click submit when your post is ready
 
 - Previous posts are displayed in the bottom box and can be scrolled through using the arrows. 
