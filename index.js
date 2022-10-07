@@ -244,40 +244,64 @@ const postComment = async (id, comment) => {
 
 
 let selectedEmoji = null
+let reactions = ['', '', '']
 
 function selectEmoji(emoji) {
-    let lastSelectedEmoji
+    let lastSelectedEmoji = selectedEmoji
 
-    if(selectedEmoji){
+    for(let i = 0; i < reactions.length; i++){
+        if(reactions[i] === 'dec')
+            reactions[i] = ''
+    }
+
+    if(lastSelectedEmoji){
         selectedEmoji.classList.remove('selectedEmoji')
         selectedEmoji.dataset.notificationCount = parseInt(selectedEmoji.dataset.notificationCount) - 1
-        lastSelectedEmoji = selectedEmoji
+
+        if(lastSelectedEmoji.isSameNode(loveButton))
+            reactions[0] = 'dec'
+
+        if(lastSelectedEmoji.isSameNode(laughButton))
+            reactions[1] = 'dec'
+
+        if(lastSelectedEmoji.isSameNode(hateButton))
+            reactions[2] = 'dec'
+        
         selectedEmoji = null
     }
 
-    if(!lastSelectedEmoji || !lastSelectedEmoji.isSameNode(emoji)){
+    if(!lastSelectedEmoji || !emoji.isSameNode(lastSelectedEmoji)){
+        emoji.classList.add('selectedEmoji')
+        emoji.dataset.notificationCount = parseInt(emoji.dataset.notificationCount) + 1
+
+        if(emoji.isSameNode(loveButton))
+            reactions[0] = 'inc'
+
+        if(emoji.isSameNode(laughButton))
+            reactions[1] = 'inc'
+
+        if(emoji.isSameNode(hateButton))
+            reactions[2] = 'inc'
+
         selectedEmoji = emoji
-        selectedEmoji.classList.add('selectedEmoji')
-        selectedEmoji.dataset.notificationCount = parseInt(selectedEmoji.dataset.notificationCount) + 1
     }
+    console.log(reactions)
+    addReaction(postId, ...reactions)
 }
 
 loveButton.addEventListener('click', e => {
     e.preventDefault();
     selectEmoji(loveButton)
-    addReaction(postId, 'inc', '', '')
 })
 
 laughButton.addEventListener('click', e => {
     e.preventDefault();
     selectEmoji(laughButton)
-    addReaction(postId, '', 'inc', '')
 })
 
 hateButton.addEventListener('click', e => {
     e.preventDefault();
     selectEmoji(hateButton)
-    addReaction(postId, '', '', 'inc')
 })
 
 module.exports = {
