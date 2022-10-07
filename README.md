@@ -24,17 +24,3 @@ This project is a small journaling website allowing users to create posts that a
 #### HTML/CSS
 
 #### JavaScript
-
-## Process
-
-
-## Screenshots
-
-## Wins and Challenges
-### Wins
-
-### Challenges
-
-## Bugs
-
-## Future Features
