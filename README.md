@@ -1,4 +1,4 @@
-# Maulorum - Lap 1 blog project
+# Maulorum - Blog Project
 
 ## Project Description
 - The aim was to create a small journaling website allowing users to post journal entries that are then passed to a server.
